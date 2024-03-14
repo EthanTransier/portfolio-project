@@ -1,10 +1,9 @@
-import styles from "./page.module.css";
-
+'use client'
+import Header from '../Components/Header'
 export default function Home() {
-
-
   return (
-    <main className={styles.main}>
+    <main>
+      <Header></Header>
     </main>
   );
 }
