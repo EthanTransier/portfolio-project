@@ -7,47 +7,49 @@ const Navbar = () => {
         { text: "ABOUT" },
         { text: "HOME" }
     ];
-     const intervalMap = new Map();
-    const onMouseOver = (index, event) => {
-            let iteration = 0;
-            // event.target.classList.add('red-text')
-            clearInterval(intervalMap.get(index));
 
-            const interval = setInterval(() => {
-                    let newText = event.target.innerHTML.split('');
+    const intervalMap = useRef(new Map());
 
-                    for(let i = 0; i < newText.length; i++){
-                        if(i < iteration){
-                            newText.push('<p className="red-text">' + event.target.dataset.value[i] + '</p>');
-                        }else{
-                            newText.push('<p>' + randomLetter() + '</p>');
-                        }
+    const onMouseOver = (index) => (event) => {
+        let iteration = 0;
+
+        clearInterval(intervalMap.current.get(index));
+
+        const interval = setInterval(() => {
+            console.log(event.target)
+            const newText = event.target.dataset.value
+                .split("")
+                .map((letter, i) => {
+                    if (i < iteration) {
+                        return event.target.dataset.value[i];
                     }
+                    return randomLetter();
+                })
+                .map((letter, i) => `<p key=${i} className="red-text">${String(letter)}</p>`); // Convert letter to string
+                console.log(newText)
+            event.target.innerHTML = newText;
 
-                event.target.innerHTML = newText.join('');
-
-                if (iteration >= event.target.dataset.value.length) {
-                    clearInterval(interval);
-                }
-
-                iteration += 1 / 3;
-            }, 30);
-
-            intervalMap.set(index, interval);
-        };
-        const onMouseOut = (index, event) => {
-            // event.target.classList.remove('red-text')
-            clearInterval(intervalMap.get(index));
-            const target = document.getElementById(`link-${index}`);
-            if (target) {
-                target.innerHTML = target.dataset.value.replace(/./g, '$&<br/>');
+            if (iteration >= event.target.dataset.value.length) {
+                clearInterval(interval);
             }
-        };
+
+            iteration += 1 / 3;
+        }, 30);
+
+        intervalMap.current.set(index, interval);
+    };
+
+    const onMouseOut = (index) => () => {
+        clearInterval(intervalMap.current.get(index));
+        const target = document.getElementById(`link-${index}`);
+        if (target) {
+            target.innerHTML = target.dataset.value.split("").map((letter, i) => `<p key=${i}>${String(letter)}</p>`); // Convert letter to string
+        }
+    };
 
     useEffect(() => {
-        // window.onload = onMouseOver(0, );
         return () => {
-            intervalMap.forEach((interval) => clearInterval(interval));
+            intervalMap.current.forEach((interval) => clearInterval(interval));
         };
     }, []);
 
@@ -72,15 +74,10 @@ const Navbar = () => {
                         <h5
                             id={`link-${index}`}
                             data-value={link.text}
-                            onMouseOver={(event) => onMouseOver(index, event)}
-                            onMouseOut={(event) => onMouseOut(index, event)}
+                            onMouseOver={onMouseOver(index)}
+                            onMouseOut={onMouseOut(index)}
                         >
-                            {link.text.split('').map((letter, index) => (
-                                <React.Fragment key={index}>
-                                    {letter}
-                                    <br />
-                                </React.Fragment>
-                            ))}
+                            {link.text.split("").map((letter, i) => <p key={i}>{String(letter)}</p>)} {/* Convert letter to string */}
                         </h5>
                     </div>
                 ))}

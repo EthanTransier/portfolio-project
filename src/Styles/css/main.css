@@ -225,6 +225,7 @@ main {
   line-height: 20px;
   text-align: center;
   width: 14px;
+  flex-direction: column;
 }
 .header nav .links-container div .red-text {
   color: #ff5a43;
