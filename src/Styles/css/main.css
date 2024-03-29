@@ -184,6 +184,7 @@ main {
   display: flex;
   justify-content: space-between;
   margin-top: 9px;
+  position: fixed;
 }
 .header .top-green-line {
   width: 83%;
@@ -281,4 +282,35 @@ main {
 .header nav .links-container .current-link h5 p {
   color: #ff5a43;
   font-weight: 500;
+}
+
+.landing-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.landing-section h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.landing-section h1 p {
+  text-align: center;
+  line-height: 170px;
+  font-size: 100px;
+  font-weight: 600;
+}
+.landing-section h1 .text-background {
+  background-color: #111111;
+  z-index: 2;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  line-height: 100px;
+}
+.landing-section .main-shape {
+  position: absolute;
+  z-index: 0;
 }/*# sourceMappingURL=main.css.map */
