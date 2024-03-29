@@ -12,38 +12,104 @@
     width: 15%;
     display: flex;
     flex-direction: column;
-    gap: 13px;
-    .top-white-line {
-      width: 100%;
-      height: 1px;
-      background-color: white;
-    }
+    // .top-white-line {
+    //   width: 100%;
+    //   height: 1px;
+    //   background-color: white;
+    // }
     .links-container {
       display: flex;
       justify-content: space-around;
-      div {
+      gap: 0px;
+      border-top: 1px solid white;
+      a {
+        z-index: 5;
         display: flex;
+        padding-top: 13px;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
+        gap: 14px;
+        width: 70px;
+        cursor: pointer;
+        height: 100%;
+        padding-bottom: 4px;
+        position: relative;
+        transform: translateY(-1px);
+        text-decoration: none;
+        // border-top: 1px solid white;
+        &:hover {
+          border-top: 1px solid #ff5a43;
+          .white-dot {
+            background-color: #ff5a43;
+          }
+          img {
+            // sets the url to the red diamond version, couldn't figure out how to change the color when importing the svg to the image tag
+            // just a glorified way to make the svg red instead of white
+            content: url('/images/red-diamond.svg');
+            transform: rotate(225deg);
+          }
+        }
+        .cover {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          padding: 0;
+          border-top: 0;
+          transform: translateY(-13px);
+        }
         .white-dot {
           height: 3px;
           width: 3px;
           border-radius: 1.5px;
           background-color: white;
+          padding: 0;
+          border-top: 0;
+        }
+        img {
+          transition: 0.2s ease-in-out;
+        }
+        .red-text {
+          p {
+            color: #ff5a43;
+            font-weight: 500;
+          }
         }
         h5 {
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 14px;
+          .red-text {
+            color: #ff5a43;
+            font-weight: 500;
+          }
+          p {
+            font-weight: 200;
+            color: white;
+            text-decoration: none;
+          }
           line-height: 20px;
           text-align: center;
           width: 14px;
           flex-direction: column;
         }
-        .red-text {
-          color: #ff5a43;
+      }
+      .current-link {
+        border-top: 1px solid #ff5a43;
+        .white-dot {
+          background-color: #ff5a43;
+        }
+        img {
+          // sets the url to the red diamond version, couldn't figure out how to change the color when importing the svg to the image tag
+          // just a glorified way to make the svg red instead of white
+          content: url('/images/red-diamond.svg');
+          transform: rotate(225deg);
+        }
+        h5 {
+          p {
+            color: #ff5a43;
+            font-weight: 500;
+          }
         }
       }
     }

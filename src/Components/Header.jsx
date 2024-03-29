@@ -1,9 +1,9 @@
 import Navbar from './Navbar'
-const header = () => {
+const header = (page) => {
   return (
     <div className="header">
         <div className="top-green-line"></div>
-        <Navbar></Navbar>
+        <Navbar page={page}></Navbar>
     </div>
   )
 }

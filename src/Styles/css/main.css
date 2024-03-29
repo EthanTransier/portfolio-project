@@ -194,30 +194,62 @@ main {
   width: 15%;
   display: flex;
   flex-direction: column;
-  gap: 13px;
-}
-.header nav .top-white-line {
-  width: 100%;
-  height: 1px;
-  background-color: white;
 }
 .header nav .links-container {
   display: flex;
   justify-content: space-around;
+  gap: 0px;
+  border-top: 1px solid white;
 }
-.header nav .links-container div {
+.header nav .links-container a {
+  z-index: 5;
   display: flex;
+  padding-top: 13px;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 14px;
+  width: 70px;
+  cursor: pointer;
+  height: 100%;
+  padding-bottom: 4px;
+  position: relative;
+  transform: translateY(-1px);
+  text-decoration: none;
 }
-.header nav .links-container div .white-dot {
+.header nav .links-container a:hover {
+  border-top: 1px solid #ff5a43;
+}
+.header nav .links-container a:hover .white-dot {
+  background-color: #ff5a43;
+}
+.header nav .links-container a:hover img {
+  content: url("/images/red-diamond.svg");
+  transform: rotate(225deg);
+}
+.header nav .links-container a .cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 0;
+  border-top: 0;
+  transform: translateY(-13px);
+}
+.header nav .links-container a .white-dot {
   height: 3px;
   width: 3px;
   border-radius: 1.5px;
   background-color: white;
+  padding: 0;
+  border-top: 0;
 }
-.header nav .links-container div h5 {
+.header nav .links-container a img {
+  transition: 0.2s ease-in-out;
+}
+.header nav .links-container a .red-text p {
+  color: #ff5a43;
+  font-weight: 500;
+}
+.header nav .links-container a h5 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,6 +259,26 @@ main {
   width: 14px;
   flex-direction: column;
 }
-.header nav .links-container div .red-text {
+.header nav .links-container a h5 .red-text {
   color: #ff5a43;
+  font-weight: 500;
+}
+.header nav .links-container a h5 p {
+  font-weight: 200;
+  color: white;
+  text-decoration: none;
+}
+.header nav .links-container .current-link {
+  border-top: 1px solid #ff5a43;
+}
+.header nav .links-container .current-link .white-dot {
+  background-color: #ff5a43;
+}
+.header nav .links-container .current-link img {
+  content: url("/images/red-diamond.svg");
+  transform: rotate(225deg);
+}
+.header nav .links-container .current-link h5 p {
+  color: #ff5a43;
+  font-weight: 500;
 }/*# sourceMappingURL=main.css.map */
