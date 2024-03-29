@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link'
 
-const Navbar = (page) => {
+const Navbar = ({page, navState}) => {
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     console.log(page.page.page)
     // keeps track of the different intervals for each word
@@ -72,9 +72,9 @@ const Navbar = (page) => {
             [ref.current.getAttribute('data-ref')]: intervalId
         }));
     }
-
+    console.log(navState)
     return (
-        <nav>
+        <nav className={navState ? 'open' : ''}>
             <div className="top-white-line"></div>
             <div className="links-container">
                 
