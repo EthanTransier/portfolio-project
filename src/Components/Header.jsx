@@ -11,7 +11,7 @@ const header = (page) => {
   return (
     <div className="header">
         <div className="top-green-line"></div>
-        <div className={navState ? 'hamburger-nav open' : 'hamburger-nav'} onClick={() => openNav()}>
+        <div className={navState ? 'hamburger-nav menu-open' : 'hamburger-nav'} onClick={() => openNav()}>
           <div className='line line-1'></div>
           <div className='line line-2'></div>
           <div className='line line-3'></div>

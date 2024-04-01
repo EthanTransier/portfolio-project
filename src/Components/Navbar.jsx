@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Navbar = ({page, navState}) => {
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    console.log(page.page.page)
+    console.log(page.page)
     // keeps track of the different intervals for each word
     const [intervalIds, setIntervalIds] = useState({
         contact: null,
@@ -78,7 +78,7 @@ const Navbar = ({page, navState}) => {
             <div className="top-white-line"></div>
             <div className="links-container">
                 
-                    <Link href="/contact" className={(page.page.page == 'contact') ? 'current-link' : ''}>
+                    <Link href="/contact" className={(page.page == 'contact') ? 'current-link' : ''}>
                         <div className='cover' onMouseEnter={() => changeText(refs.contact, true)} onMouseLeave={() => changeText(refs.contact, false)} data-ref="contact"></div>
                         <div className="white-dot"></div>
                         <img
@@ -97,7 +97,7 @@ const Navbar = ({page, navState}) => {
                             <p>T</p>
                         </h5>
                     </Link>
-                    <Link href="/projects" className={`${(page.page.page == 'projects') ? 'current-link' : ''}`}>
+                    <Link href="/projects" className={`${(page.page == 'projects') ? 'current-link' : ''}`}>
                         <div className='cover' onMouseEnter={() => changeText(refs.projects, true)} onMouseLeave={() => changeText(refs.projects, false)} data-ref="projects"></div>
                         <div className="white-dot"></div>
                         <img
@@ -117,7 +117,7 @@ const Navbar = ({page, navState}) => {
                             <p>S</p>
                         </h5>
                     </Link>
-                    <Link href="/about" className={(page.page.page == 'about') ? 'current-link' : ''}>
+                    <Link href="/about" className={(page.page == 'about') ? 'current-link' : ''}>
                         <div className='cover' onMouseEnter={() => changeText(refs.about, true)} onMouseLeave={() => changeText(refs.about, false)} data-ref="about"></div>
                         <div className="white-dot"></div>
                         <img
@@ -134,7 +134,7 @@ const Navbar = ({page, navState}) => {
                             <p>T</p>
                         </h5>
                     </Link>
-                    <Link href="/" className={(page.page.page == 'home') ? 'current-link' : ''}>
+                    <Link href="/" className={(page.page == 'home') ? 'current-link' : ''}>
                         <div className='cover' onMouseEnter={() => changeText(refs.home, true)} onMouseLeave={() => changeText(refs.home, false)} data-ref="home"></div>
                         <div className="white-dot"></div>
                         <img
