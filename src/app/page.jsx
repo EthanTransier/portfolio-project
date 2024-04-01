@@ -12,36 +12,53 @@ export default function Home() {
   const container = useRef()
 
   useGSAP(() => {
-    gsap.to('#name-1', {
+    var tl = gsap.timeline({})
+
+    // Animation 1: Move along the first path
+    tl.to('#name-1', {
       motionPath: {
-        path: ["#path", '#path2'],
-        align: ["#path", '#path2'],
+        path: '#path2',
+        align: "#path2",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        duration: 30
+      },
+      transformOrigin: "50% 50%",
+      ease: "power1.inOut",
+    })
+
+    // Animation 2: Move along the second path
+    tl.to('#name-1', {
+      motionPath: {
+        path: '#path',
+        align: "#path",
         alignOrigin: [0.5, 0.5],
         autoRotate: true,
       },
-    transformOrigin: "50% 50%",
-    duration: 1,
-    ease: "power1.inOut",})
+      duration: 3,
+      ease: "power1.inOut",
+    })
+
+    // tl.reverse()
   })
 
   return (
     <main>
-  <Header page="home"></Header>
-  <section className='landing-section'>
-    <h1>
-      <p id='name-1'>E</p>
-      <p id='name-2'>T</p>
-      <p className='text-background'>H</p>
-      <p id='name-3'>A</p>
-      <p id='name-4'>N</p>
-    </h1>
-    <img src="/images/main-shape.svg" alt="main landing shape" height={175} width={175} className='main-shape'/>
-    <svg id="e7huyrD0CVI1" viewBox="0 0 300 300" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
-      <path d="M150,39.447421Q35.597549,39.44742,35.597549,150" transform="translate(0 0.000001)" fill="none" stroke="#3f5787" strokeWidth="0.6" id='path2'/>
-      <path d="M150,39.447422L150,150" transform="matrix(0-1 1 0-3.849873 300)" fill="none" stroke="#3f5787" strokeWidth="0.6" id='path' className='path'/>
-    </svg>
-  </section>
-</main>
-
+      <Header page="home"></Header>
+      <section className='landing-section'>
+        <h1>
+          <p id='name-1'>E</p>
+          <p id='name-2'>T</p>
+          <p className='text-background'>H</p>
+          <p id='name-3'>A</p>
+          <p id='name-4'>N</p>
+        </h1>
+        <img src="/images/main-shape.svg" alt="main landing shape" height={175} width={175} className='main-shape'/>
+        <svg id="e7huyrD0CVI1" viewBox="0 0 300 300" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
+          <path d="M150,39.447421Q35.597549,39.44742,35.597549,150" transform="translate(0 0.000001)" fill="none" stroke="#3f5787" strokeWidth="0.6" id='path2'/>
+          <path d="M150,39.447422L150,150" transform="matrix(0-1 1 0-3.849873 300)" fill="none" stroke="#3f5787" strokeWidth="0.6" id='path' className='path'/>
+        </svg>
+      </section>
+    </main>
   );
 }
