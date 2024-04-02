@@ -424,7 +424,6 @@ main {
 }
 .landing-section h1 p {
   text-align: center;
-  line-height: 170px;
   font-size: 100px;
   font-weight: 600;
   position: absolute;
@@ -441,4 +440,15 @@ main {
   position: absolute;
   z-index: 0;
   transform: rotate(90deg);
+}
+
+.opening-text-container {
+  position: absolute;
+  left: 10vw;
+}
+.opening-text-container p {
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 6px;
 }/*# sourceMappingURL=main.css.map */

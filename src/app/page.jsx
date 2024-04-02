@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'; // Import React
 import Header from '../Components/Header'
+import OpeningText from '../Components/OpeningText';
 import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
@@ -80,6 +81,7 @@ export default function Home() {
     <main>
       <Header page="home"></Header>
       <section className='landing-section'>
+        <OpeningText></OpeningText>
         <h1>
           <p id='name-1'>E</p>
           <p id='name-2'>T</p>
