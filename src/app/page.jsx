@@ -12,35 +12,69 @@ export default function Home() {
   const container = useRef()
 
   useGSAP(() => {
-    var tl = gsap.timeline({})
-
-    // Animation 1: Move along the first path
-    tl.to('#name-1', {
-      motionPath: {
-        path: '#path2',
-        align: "#path2",
-        alignOrigin: [0.5, 0.5],
-        autoRotate: true,
-        duration: 30
-      },
-      transformOrigin: "50% 50%",
-      ease: "power1.inOut",
+    // Animation for the E
+    gsap.timeline()
+    .to('#name-1', {
+        x: '+=-350',
+        ease: "circ.inOut",
+        duration: 0.35
     })
-
-    // Animation 2: Move along the second path
-    tl.to('#name-1', {
-      motionPath: {
-        path: '#path',
-        align: "#path",
-        alignOrigin: [0.5, 0.5],
-        autoRotate: true,
-      },
-      duration: 3,
-      ease: "power1.inOut",
+    .to('#name-1', {
+        x: '+=350',
+        y: -350,
+        delay: 0.15,
+        ease: "circ.inOut",
+        duration: 0.4    
+      })
+    // Animation for the T
+    gsap.timeline()
+    .to('#name-2', {
+        x: '+=-175',
+        ease: "circ.inOut",
+        duration: 0.35
     })
-
-    // tl.reverse()
-  })
+    .to('#name-2', {
+        x: '+=175',
+        ease: "circ.inOut",
+        y: -175,
+        delay: 0.15,
+        duration: 0.4
+    })
+    // Animation for the A
+    gsap.timeline()
+    .to('#name-3', {
+        x: '+=150',
+        ease: "circ.inOut",
+        duration: 0.35
+    })
+    .to('#name-3', {
+        x: '-=150',
+        y: 175,
+        delay: 0.15,
+        ease: "circ.inOut",
+        duration: 0.4
+    })
+    // Animation for the N
+    gsap.timeline()
+    .to('#name-4', {
+        x: '+=350',
+        ease: "circ.inOut",
+        duration: 0.35
+    })
+    .to('#name-4', {
+        x: '+-350',
+        y: 350,
+        delay: 0.15,
+        ease: "circ.inOut",
+        duration: 0.4    
+      })
+    // Animation for the main shape
+    gsap.timeline({delay: 0.5})
+    .to('#main-shape', {
+      rotate: '+=90deg',
+      duration: 0.3
+    })
+})
 
   return (
     <main>
@@ -53,11 +87,7 @@ export default function Home() {
           <p id='name-3'>A</p>
           <p id='name-4'>N</p>
         </h1>
-        <img src="/images/main-shape.svg" alt="main landing shape" height={175} width={175} className='main-shape'/>
-        <svg id="e7huyrD0CVI1" viewBox="0 0 300 300" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
-          <path d="M150,39.447421Q35.597549,39.44742,35.597549,150" transform="translate(0 0.000001)" fill="none" stroke="#3f5787" strokeWidth="0.6" id='path2'/>
-          <path d="M150,39.447422L150,150" transform="matrix(0-1 1 0-3.849873 300)" fill="none" stroke="#3f5787" strokeWidth="0.6" id='path' className='path'/>
-        </svg>
+        <img src="/images/main-shape.svg" alt="main landing shape" height={175} width={175} className='main-shape' id='main-shape'/>
       </section>
     </main>
   );

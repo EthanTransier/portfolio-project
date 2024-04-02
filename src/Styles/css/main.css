@@ -428,13 +428,7 @@ main {
   font-size: 100px;
   font-weight: 600;
   position: absolute;
-}
-.landing-section h1 #name-1 {
-  animation-name: name-1;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  transform-origin: center;
+  z-index: 1;
 }
 .landing-section h1 .text-background {
   background-color: #111111;
@@ -446,4 +440,5 @@ main {
 .landing-section .main-shape {
   position: absolute;
   z-index: 0;
+  transform: rotate(90deg);
 }/*# sourceMappingURL=main.css.map */
