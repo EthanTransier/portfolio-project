@@ -1,8 +1,6 @@
 'use client'
-import React from 'react'; // Import React
 import Header from '../Components/Header'
 import OpeningText from '../Components/OpeningText';
-import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { useGSAP } from "@gsap/react";
@@ -10,7 +8,6 @@ import { useGSAP } from "@gsap/react";
 export default function Home() {
   gsap.registerPlugin(useGSAP)
   gsap.registerPlugin(MotionPathPlugin) 
-  const container = useRef()
 
   useGSAP(() => {
     // Animation for the E

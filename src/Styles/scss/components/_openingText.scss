@@ -1,10 +1,24 @@
 .opening-text-container {
   position: absolute;
   left: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75px;
+  .opening-text-line {
+    width: 1px;
+    // height: 100%;
+    background-color: #ff5a43;
+    margin-right: 14px;
+  }
   p {
     font-weight: 200;
     font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 6px;
+    line-height: 24px;
+    letter-spacing: 8px;
+  }
+  .green-text {
+    font-weight: 500;
+    color: #1b998b;
   }
 }
