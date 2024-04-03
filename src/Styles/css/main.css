@@ -464,4 +464,24 @@ main {
 .opening-text-container .green-text {
   font-weight: 500;
   color: #1b998b;
+}
+
+.heatmap {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(52, 10px);
+}
+.heatmap .shape {
+  width: 10px;
+  aspect-ratio: 1/1;
+  background-color: #4ed05b;
+  border-radius: 2px;
+}
+
+.about-opening {
+  height: 50vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=main.css.map */
