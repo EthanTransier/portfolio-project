@@ -508,4 +508,12 @@ main {
   background-color: #1b998b;
   border-radius: 50%;
   z-index: 1;
+}
+
+.about-opening {
+  height: 50vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=main.css.map */
