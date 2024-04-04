@@ -516,4 +516,16 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.heatmap {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(52, 10px);
+}
+.heatmap .shape {
+  width: 10px;
+  aspect-ratio: 1/1;
+  background-color: #4ed05b;
+  border-radius: 2px;
 }/*# sourceMappingURL=main.css.map */
