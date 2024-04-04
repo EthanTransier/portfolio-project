@@ -1,0 +1,31 @@
+.social-media-container {
+  display: flex;
+  gap: 75px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10vw;
+  cursor: pointer;
+  div {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      z-index: 2;
+      position: absolute;
+    }
+    .shape {
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      background-color: #1b998b;
+      border-radius: 50%;
+      z-index: 1;
+    }
+  }
+}

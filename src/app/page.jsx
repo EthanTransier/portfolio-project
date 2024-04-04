@@ -1,6 +1,7 @@
 'use client'
 import Header from '../Components/Header'
 import OpeningText from '../Components/OpeningText';
+import SocialMedia from '../Components/SocialMedia'
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { useGSAP } from "@gsap/react";
@@ -41,12 +42,12 @@ export default function Home() {
     // Animation for the A
     gsap.timeline()
     .to('#name-3', {
-        x: '+=150',
+        x: '+=175',
         ease: "circ.inOut",
         duration: 0.35
     })
     .to('#name-3', {
-        x: '-=150',
+        x: '-=175',
         y: 175,
         delay: 0.15,
         ease: "circ.inOut",
@@ -87,6 +88,7 @@ export default function Home() {
           <p id='name-4'>N</p>
         </h1>
         <img src="/images/main-shape.svg" alt="main landing shape" height={175} width={175} className='main-shape' id='main-shape'/>
+        <SocialMedia></SocialMedia>
       </section>
     </main>
   );

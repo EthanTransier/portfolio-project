@@ -207,6 +207,7 @@ main {
 }
 .header nav .links-container {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-around;
   gap: 0px;
   border-top: 1px solid white;
@@ -447,21 +448,64 @@ main {
   left: 10vw;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 75px;
 }
-.opening-text-container .opening-text-line {
+.opening-text-container .opening-text-line-container {
   width: 1px;
-  background-color: #ff5a43;
+  height: 100%;
+  background-color: #111111;
   margin-right: 14px;
+  position: absolute;
+  z-index: 2;
+}
+.opening-text-container .opening-text-line-container .line {
+  background-color: #ff5a43;
+  width: 1px;
 }
 .opening-text-container p {
+  display: none;
+  padding-left: 15px;
   font-weight: 200;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 8px;
+  position: absolute;
+  z-index: 1;
 }
 .opening-text-container .green-text {
   font-weight: 500;
   color: #1b998b;
+}
+
+.social-media-container {
+  display: flex;
+  gap: 75px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10vw;
+  cursor: pointer;
+}
+.social-media-container div {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-media-container div img {
+  z-index: 2;
+  position: absolute;
+}
+.social-media-container div .shape {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  background-color: #1b998b;
+  border-radius: 50%;
+  z-index: 1;
 }/*# sourceMappingURL=main.css.map */

@@ -24,6 +24,7 @@
     // }
     .links-container {
       display: flex;
+      flex-direction: row-reverse;
       justify-content: space-around;
       gap: 0px;
       border-top: 1px solid white;
