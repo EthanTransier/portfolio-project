@@ -528,4 +528,90 @@ main {
   aspect-ratio: 1/1;
   background-color: #4ed05b;
   border-radius: 2px;
+}
+
+.timeline-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #111111;
+}
+.timeline-container h1 {
+  font-size: 120px;
+  font-weight: 700;
+  color: #1b998b;
+  cursor: pointer;
+  width: 60%;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  background-color: #111111;
+  transition: 0.15s ease-in-out;
+}
+.timeline-container h1 span {
+  color: #ff5a43;
+  font-weight: 700;
+  transition: 0.15s ease-in-out;
+  text-align: center;
+}
+.timeline-container h1:hover {
+  font-weight: 800;
+}
+.timeline-container h1:hover span {
+  font-weight: 800;
+}
+.timeline-container .white-bottom {
+  width: 0%;
+  height: 5px;
+  background-color: white;
+}
+.timeline-container .timeline-info-container {
+  width: 60%;
+  display: flex;
+  margin-bottom: 5rem;
+  position: absolute;
+  z-index: -1;
+}
+.timeline-container .timeline-info-container div {
+  width: 50%;
+}
+.timeline-container .timeline-info-container .timeline-left {
+  margin-top: 1rem;
+  line-height: 30px;
+}
+.timeline-container .timeline-info-container .timeline-left h3 {
+  margin-left: 1.5rem;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 6px;
+}
+.timeline-container .timeline-info-container .timeline-left p {
+  margin-left: 3rem;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+.timeline-container .timeline-info-container .timeline-left .red-text {
+  color: #ff5a43;
+  font-weight: 700;
+}
+.timeline-container .timeline-info-container .timeline-right {
+  text-align: right;
+  margin-top: 1rem;
+}
+.timeline-container .timeline-info-container .timeline-right h2 {
+  margin-right: 1.5rem;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 6px;
+}
+.timeline-container .timeline-info-container .timeline-right p {
+  margin-right: 3rem;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 25px;
+  margin-top: 0.5rem;
 }/*# sourceMappingURL=main.css.map */

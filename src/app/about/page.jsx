@@ -1,6 +1,7 @@
 'use client'
 import Header from '../../Components/Header'
 import Heatmap from '../../Components/Heatmap'
+import Timeline from '../../Components/Timeline'
 export default function Home() {
   return (
     <main>
@@ -8,6 +9,7 @@ export default function Home() {
       <section className='about-opening'>
         <Heatmap></Heatmap>
       </section>
+      <Timeline></Timeline>
     </main>
   );
 }
