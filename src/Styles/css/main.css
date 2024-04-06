@@ -497,17 +497,13 @@ main {
   align-items: center;
   justify-content: center;
 }
-.social-media-container div img {
-  z-index: 2;
-  position: absolute;
-}
-.social-media-container div .shape {
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  background-color: #1b998b;
-  border-radius: 50%;
-  z-index: 1;
+.social-media-container div div {
+  width: 40px;
+  aspect-ratio: 1/1;
+  mask-image: url("../../../public/images/instagram.svg"); /* Set the SVG file as the mask */
+  mask-size: contain; /* Ensure the mask covers the entire element */
+  mask-repeat: no-repeat; /* Prevent the mask from repeating */
+  background-color: white;
 }
 
 .about-opening {
@@ -526,6 +522,6 @@ main {
 .heatmap .shape {
   width: 10px;
   aspect-ratio: 1/1;
-  background-color: #4ed05b;
+  background-color: #37a445;
   border-radius: 2px;
 }/*# sourceMappingURL=main.css.map */

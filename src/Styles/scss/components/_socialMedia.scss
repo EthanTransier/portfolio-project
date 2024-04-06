@@ -15,17 +15,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    img {
-      z-index: 2;
-      position: absolute;
-    }
-    .shape {
-      width: 0px;
-      height: 0px;
-      position: absolute;
-      background-color: #1b998b;
-      border-radius: 50%;
-      z-index: 1;
+    // background-color: #1b998b;
+    // border: 1px solid #1b998b;
+    div {
+      width: 40px;
+      aspect-ratio: 1/1;
+      mask-image: url('../../../public/images/instagram.svg'); /* Set the SVG file as the mask */
+      mask-size: contain; /* Ensure the mask covers the entire element */
+      mask-repeat: no-repeat; /* Prevent the mask from repeating */
+      background-color: white;
     }
   }
 }
