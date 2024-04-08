@@ -42,9 +42,12 @@
   .timeline-info-container {
     width: 60%;
     display: flex;
-    margin-bottom: 5rem;
-    position: absolute;
-    z-index: -1;
+    background-color: #111111;
+    overflow-y: hidden;
+    // margin-bottom: 5rem;
+    // position: absolute;
+    // z-index: -1;
+    height: 0;
     // top: 0;
     div {
       width: 50%;
@@ -63,6 +66,11 @@
         font-size: 14px;
         font-weight: 300;
         letter-spacing: 3px;
+        cursor: pointer;
+        transition: 0.1s ease-in-out;
+        &:hover {
+          color: #ff5a43;
+        }
       }
       .red-text {
         color: #ff5a43;

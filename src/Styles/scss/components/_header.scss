@@ -4,8 +4,10 @@
   justify-content: space-between;
   margin-top: 9px;
   position: fixed;
+  pointer-events: none;
   .hamburger-nav {
     display: none;
+    pointer-events: auto;
   }
   .top-green-line {
     width: 83%;
@@ -16,7 +18,7 @@
     width: 15%;
     display: flex;
     flex-direction: column;
-
+    pointer-events: auto;
     // .top-white-line {
     //   width: 100%;
     //   height: 1px;

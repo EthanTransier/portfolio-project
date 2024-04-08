@@ -50,7 +50,7 @@ const SocialMedia = () => {
     };
 
     // LINKED IN
-    const handleMouseEnter3 = (e) => {
+    const handleMouseEnter3 = () => {
        gsap.timeline()
         .to('#image3', {
             ease: "circ.inOut",

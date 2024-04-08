@@ -191,9 +191,11 @@ main {
   justify-content: space-between;
   margin-top: 9px;
   position: fixed;
+  pointer-events: none;
 }
 .header .hamburger-nav {
   display: none;
+  pointer-events: auto;
 }
 .header .top-green-line {
   width: 83%;
@@ -204,6 +206,7 @@ main {
   width: 15%;
   display: flex;
   flex-direction: column;
+  pointer-events: auto;
 }
 .header nav .links-container {
   display: flex;
@@ -566,9 +569,9 @@ main {
 .timeline-container .timeline-info-container {
   width: 60%;
   display: flex;
-  margin-bottom: 5rem;
-  position: absolute;
-  z-index: -1;
+  background-color: #111111;
+  overflow-y: hidden;
+  height: 0;
 }
 .timeline-container .timeline-info-container div {
   width: 50%;
@@ -588,6 +591,11 @@ main {
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 3px;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+.timeline-container .timeline-info-container .timeline-left p:hover {
+  color: #ff5a43;
 }
 .timeline-container .timeline-info-container .timeline-left .red-text {
   color: #ff5a43;
