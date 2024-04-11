@@ -11,6 +11,9 @@ const Timeline = () => {
     const infoContainerSecond = useRef(0)
     const infoContainerThird = useRef(0)
 
+    const firstText = useRef(0)
+    const firstTextTitle = useRef(0)
+
     const firstInfo1 = useRef(0)
     const firstInfo2 = useRef(0)
     const firstInfo3 = useRef(0)
@@ -167,6 +170,8 @@ const Timeline = () => {
         
     }
 
+    const firstInfo = ['test 1', 'test 2', 'test 3', 'test 4', 'test 5', 'test 6'];
+
     function openFirstInfo(item){
         for(let i = 0; i < firstTitles.length; i++){
             console.log(firstTitles[i].current)
@@ -174,6 +179,8 @@ const Timeline = () => {
             firstTitles[i].current.className = ""
         }
         firstTitles[item].current.className = 'red-text'
+        firstText.current.innerHTML = firstInfo[item]
+        firstTextTitle.current.innerHTML = firstTitles[item].current.innerHTML
     }
 
   return (
@@ -193,20 +200,22 @@ const Timeline = () => {
                 <p onClick={() => openFirstInfo(5)} ref={firstInfo6}>6 WEEK INTERNSHIP</p>
             </div>
             <div className="timeline-right">
-                <h2>6 WEEK INTERNSHIP</h2>
-                <p>volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in </p>
+                <h2 ref={firstTextTitle}>6 WEEK INTERNSHIP</h2>
+                <p ref={firstText}>volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in </p>
             </div>
         </section>
         <h1 onClick={() => open('second', infoContainerSecond)} onMouseEnter={() => enter('second')} onMouseLeave={() => leave('second')}>20<span>23</span></h1>
         <div className='white-bottom' id='second'></div>
         <section className='timeline-info-container' ref={infoContainerSecond} id='second-info'>
             <div className="timeline-left">
-                <h3>WEST-MEC Y2S2</h3>
-                <p>OFFICER WORK CONT</p>
+                <h3>WEST-MEC Y1S2</h3>
                 <p>PROJECTS</p>
-                <h3>FBLA</h3>
+                <h3>FBLA 23</h3>
+                <p>FLEX</p>
                 <p>WEB DESIGN</p>
-                <p>GRAPHIC DESIGN</p>
+                <h3>WEST-MEC Y2S1</h3>
+                <p>OFFICER WORK</p>
+                <p>PROJECTS</p>
                 <h3>EXTRAS</h3>
                 <p>VOLUNTEER WORK</p>
                 <p className='red-text'>6 WEEK INTERNSHIP</p>
@@ -223,7 +232,7 @@ const Timeline = () => {
                 <h3>WEST-MEC Y2S2</h3>
                 <p>OFFICER WORK CONT</p>
                 <p>PROJECTS</p>
-                <h3>FBLA</h3>
+                <h3>FBLA 24</h3>
                 <p>WEB DESIGN</p>
                 <p>GRAPHIC DESIGN</p>
                 <h3>EXTRAS</h3>
