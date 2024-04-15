@@ -20,7 +20,13 @@
 		.social-icon {
 			stroke-dasharray: 1000;
 			stroke-dashoffset: 1000;
-			width: 100px;
+			width: clamp(2.5rem, 1.146rem + 3.333vw, 3.438rem);
 		}
+	}
+	@media (max-width: 651px) {
+		left: 2rem;
+		right: auto;
+		flex-direction: column;
+		margin-top: 20rem;
 	}
 }

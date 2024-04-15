@@ -345,7 +345,7 @@ main {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 651px) {
   .header {
     width: 100vw;
     position: fixed;
@@ -420,6 +420,13 @@ main {
   align-items: center;
   justify-content: center;
 }
+.landing-section .mobile-left-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0px;
+  height: 0px;
+}
 .landing-section h1 {
   display: flex;
   align-items: center;
@@ -447,10 +454,38 @@ main {
   height: clamp(7.5rem, 0rem + 20vh, 10.938rem);
   aspect-ratio: 1/1;
 }
+@media (max-width: 651px) {
+  .landing-section {
+    justify-content: flex-end;
+  }
+  .landing-section .mobile-left-line {
+    width: 3px;
+    height: 100vh;
+    background-color: #1b998b;
+  }
+  .landing-section h1 {
+    margin-right: 2rem;
+  }
+  .landing-section h1 p {
+    position: relative;
+    font-size: clamp(4rem, 0rem + 12.8vh, 6rem);
+    line-height: clamp(5rem, -1rem + 19.2vh, 8rem);
+    width: 7rem;
+    transform: translateX(11rem);
+  }
+  .landing-section h1 .text-background {
+    margin: 0;
+    line-height: clamp(5rem, -1rem + 19.2vw, 8rem);
+  }
+  .landing-section .main-shape {
+    display: none;
+    height: 0;
+  }
+}
 
 .opening-text-container {
   position: absolute;
-  left: 10vw;
+  left: clamp(2rem, -5.959rem + 19.592vw, 11rem);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -482,6 +517,25 @@ main {
   font-weight: 500;
   color: #1b998b;
 }
+@media (max-width: 651px) {
+  .opening-text-container {
+    left: 0;
+    right: auto;
+    flex-direction: column;
+    margin-bottom: 20rem;
+    z-index: 5;
+  }
+  .opening-text-container p {
+    left: 0;
+  }
+  .opening-text-container .opening-text-line-container {
+    left: 0;
+    width: 3px;
+  }
+  .opening-text-container .opening-text-line-container .line {
+    width: 3px;
+  }
+}
 
 .social-media-container {
   display: flex;
@@ -505,7 +559,15 @@ main {
 .social-media-container div .social-icon {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  width: 100px;
+  width: clamp(2.5rem, 1.146rem + 3.333vw, 3.438rem);
+}
+@media (max-width: 651px) {
+  .social-media-container {
+    left: 2rem;
+    right: auto;
+    flex-direction: column;
+    margin-top: 20rem;
+  }
 }
 
 .about-opening {

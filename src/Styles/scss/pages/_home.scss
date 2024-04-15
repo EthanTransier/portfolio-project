@@ -1,37 +1,73 @@
 .landing-section {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    p {
-      text-align: center;
-      // line-height: 170px;
-      font-size: clamp(4.375rem, -3.125rem + 17.143vh, 6.25rem);
-      font-weight: 600;
-      position: absolute;
-      z-index: 1;
-    }
-    .text-background {
-      background-color: #111111;
-      z-index: 2;
-      margin-top: 35px;
-      margin-bottom: 35px;
-      line-height: 100px;
-    }
-  }
-  .main-shape {
-    position: absolute;
-    z-index: 0;
-    transform: rotate(90deg);
-    height: clamp(7.5rem, 0rem + 20vh, 10.938rem);
-    aspect-ratio: 1/1;
-  }
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.mobile-left-line {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 0px;
+		height: 0px;
+	}
+	h1 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		p {
+			text-align: center;
+			// line-height: 170px;
+			font-size: clamp(4.375rem, -3.125rem + 17.143vh, 6.25rem);
+			font-weight: 600;
+			position: absolute;
+			z-index: 1;
+		}
+		.text-background {
+			background-color: #111111;
+			z-index: 2;
+			margin-top: 35px;
+			margin-bottom: 35px;
+			line-height: 100px;
+		}
+	}
+	.main-shape {
+		position: absolute;
+		z-index: 0;
+		transform: rotate(90deg);
+		height: clamp(7.5rem, 0rem + 20vh, 10.938rem);
+		aspect-ratio: 1/1;
+	}
+	@media (max-width: 651px) {
+		// width: calc(100vw - 3px);
+		justify-content: flex-end;
+		// border-left: 3px solid #1b998b;
+		.mobile-left-line {
+			width: 3px;
+			height: 100vh;
+			background-color: #1b998b;
+		}
+		h1 {
+			// margin-left: 10rem;
+			p {
+				position: relative;
+				font-size: clamp(4rem, 0rem + 12.8vh, 6rem);
+				line-height: clamp(5rem, -1rem + 19.2vh, 8rem);
+				width: 7rem;
+				transform: translateX(11rem);
+			}
+			.text-background {
+				margin: 0;
+				line-height: clamp(5rem, -1rem + 19.2vw, 8rem);
+			}
+			margin-right: 2rem;
+		}
+		.main-shape {
+			display: none;
+			height: 0;
+		}
+	}
 }
 // @keyframes name-1 {
 //   0% {
