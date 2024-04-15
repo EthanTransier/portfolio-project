@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link'
 
 const Navbar = ({page, navState}) => {
+    // letters for changing the text at random
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    console.log(page.page)
+
     // keeps track of the different intervals for each word
     const [intervalIds, setIntervalIds] = useState({
         contact: null,
@@ -12,11 +13,6 @@ const Navbar = ({page, navState}) => {
         home: null
     });
 
-    var contactRunning = false;
-    var projectsRunning = false;
-    var aboutRunning = false;
-    var homeRunning = false;
-
     // refs object for the divs
     const refs = {
         contact: useRef(null),
@@ -24,19 +20,14 @@ const Navbar = ({page, navState}) => {
         about: useRef(null),
         home: useRef(null)
     };
+
     // returns random letter of alphabet
     function random() {
         return letters.split('')[Math.floor(Math.random() * 26)];
     }
+
     // interval function for randomly changing the letters when they are hovered on
     function changeText(ref, condition) {
-        if(condition){
-            console.log('mouse entered')
-            console.log(ref.current.getBoundingClientRect().height)
-        }else{
-            console.log('mouse exited')
-            console.log(ref.current.getBoundingClientRect().height)
-        }
         // gets the current hovered word
         const text = ref.current;
         // gets the actual word that the hovered item is supposed to display, the text variable has the p tags inbetween each letter
@@ -72,7 +63,7 @@ const Navbar = ({page, navState}) => {
             [ref.current.getAttribute('data-ref')]: intervalId
         }));
     }
-    console.log(navState)
+
     return (
         <nav className={navState ? 'open' : ''}>
             <div className="top-white-line"></div>

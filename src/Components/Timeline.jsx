@@ -3,27 +3,31 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Timeline = () => {
+    // States for if the years are open, 2022, 2023, and 2024
     const [firstState, setFirstState] = useState(false)
     const [secondState, setSecondState] = useState(false)
     const [thirdState, setThirdState] = useState(false)
 
+    // info for the each years, with the titles on the left, and the info that changes on the right
     const infoContainerFirst = useRef(0)
     const infoContainerSecond = useRef(0)
     const infoContainerThird = useRef(0)
 
+    // Text for the first year (2022), firstText is the actual content, firstTextTitle is the title of the content, right side
     const firstText = useRef(0)
     const firstTextTitle = useRef(0)
 
+    // The different titles for the first year (2022), they are on the left
     const firstInfo1 = useRef(0)
     const firstInfo2 = useRef(0)
     const firstInfo3 = useRef(0)
     const firstInfo4 = useRef(0)
     const firstInfo5 = useRef(0)
     const firstInfo6 = useRef(0)
-
+    // Array for holding the titles
     const firstTitles = [firstInfo1, firstInfo2, firstInfo3, firstInfo4, firstInfo5, firstInfo6]
 
-    function open(item, infoContainer){
+    function open(item){
         
         if(item == 'first'){
             if(!firstState){
@@ -169,7 +173,7 @@ const Timeline = () => {
         }
         
     }
-
+    // The different text for 2022
     const firstInfo = ['test 1', 'test 2', 'test 3', 'test 4', 'test 5', 'test 6'];
 
     function openFirstInfo(item){

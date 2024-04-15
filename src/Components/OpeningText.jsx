@@ -5,13 +5,14 @@ import { useGSAP } from "@gsap/react";
 const OpeningText = () => {
   gsap.registerPlugin(useGSAP)
   useGSAP(() => {
-    // Animation for the E
+    // changes the height of the line
     gsap.timeline()
     .to('#line', {
       height: '100%',
       ease: "circ.inOut",
       duration: 0.5
     })
+    // Moves the line to the right and then to the left, repeat infinite
     gsap.timeline({repeat: -1, repeatDelay: 5, delay: 0.5})
     .to('#line-container', {
       paddingLeft: '+=210',
@@ -24,7 +25,7 @@ const OpeningText = () => {
       ease: "circ.inOut",
       duration: 0.5
     })
-
+    // Changes the text, for the first block of text "aspiring web developer"
     gsap.timeline({repeat: -1, repeatDelay: 5.5, delay: 0.5})
     .to('#opening-text', {
       display: 'block',
@@ -38,7 +39,7 @@ const OpeningText = () => {
       duration: 0.5,
       delay: 5.0
     })
-
+    // Changes the text display, for the second block of text "current coding student"
     gsap.timeline({repeat: -1, repeatDelay: 5.5, delay: 6.5})
     .to('#opening-text-2', {
       display: 'block',
