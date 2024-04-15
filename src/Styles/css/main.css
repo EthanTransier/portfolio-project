@@ -345,7 +345,7 @@ main {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .header {
     width: 100vw;
     position: fixed;
@@ -428,7 +428,7 @@ main {
 }
 .landing-section h1 p {
   text-align: center;
-  font-size: 100px;
+  font-size: clamp(4.375rem, -3.125rem + 17.143vh, 6.25rem);
   font-weight: 600;
   position: absolute;
   z-index: 1;
@@ -444,6 +444,8 @@ main {
   position: absolute;
   z-index: 0;
   transform: rotate(90deg);
+  height: clamp(7.5rem, 0rem + 20vh, 10.938rem);
+  aspect-ratio: 1/1;
 }
 
 .opening-text-container {
@@ -483,30 +485,27 @@ main {
 
 .social-media-container {
   display: flex;
-  gap: 75px;
+  gap: clamp(1.25rem, -4.479rem + 12.222vw, 4.688rem);
   align-items: center;
   justify-content: center;
   position: absolute;
-  right: 10vw;
+  right: clamp(2rem, -5.959rem + 19.592vw, 11rem);
   cursor: pointer;
 }
 .social-media-container div {
   position: relative;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   overflow: hidden;
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.social-media-container div div {
-  width: 40px;
-  aspect-ratio: 1/1;
-  mask-image: url("../../../public/images/instagram.svg"); /* Set the SVG file as the mask */
-  mask-size: contain; /* Ensure the mask covers the entire element */
-  mask-repeat: no-repeat; /* Prevent the mask from repeating */
-  background-color: white;
+.social-media-container div .social-icon {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  width: 100px;
 }
 
 .about-opening {

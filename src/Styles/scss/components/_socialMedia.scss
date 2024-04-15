@@ -1,29 +1,26 @@
 .social-media-container {
-  display: flex;
-  gap: 75px;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  right: 10vw;
-  cursor: pointer;
-  div {
-    position: relative;
-    width: 45px;
-    height: 45px;
-    overflow: hidden;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // background-color: #1b998b;
-    // border: 1px solid #1b998b;
-    div {
-      width: 40px;
-      aspect-ratio: 1/1;
-      mask-image: url('../../../public/images/instagram.svg'); /* Set the SVG file as the mask */
-      mask-size: contain; /* Ensure the mask covers the entire element */
-      mask-repeat: no-repeat; /* Prevent the mask from repeating */
-      background-color: white;
-    }
-  }
+	display: flex;
+	gap: clamp(1.25rem, -4.479rem + 12.222vw, 4.688rem);
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: clamp(2rem, -5.959rem + 19.592vw, 11rem);
+	cursor: pointer;
+	div {
+		position: relative;
+		width: 50px;
+		height: 50px;
+		overflow: hidden;
+		border-radius: 15px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		// background-color: #1b998b;
+		// border: 1px solid #1b998b;
+		.social-icon {
+			stroke-dasharray: 1000;
+			stroke-dashoffset: 1000;
+			width: 100px;
+		}
+	}
 }

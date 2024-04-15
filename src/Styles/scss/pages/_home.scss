@@ -12,7 +12,7 @@
     p {
       text-align: center;
       // line-height: 170px;
-      font-size: 100px;
+      font-size: clamp(4.375rem, -3.125rem + 17.143vh, 6.25rem);
       font-weight: 600;
       position: absolute;
       z-index: 1;
@@ -29,6 +29,8 @@
     position: absolute;
     z-index: 0;
     transform: rotate(90deg);
+    height: clamp(7.5rem, 0rem + 20vh, 10.938rem);
+    aspect-ratio: 1/1;
   }
 }
 // @keyframes name-1 {
