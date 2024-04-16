@@ -1,18 +1,16 @@
 'use client'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import Header from '../Components/Header'
 import OpeningText from '../Components/OpeningText';
 import SocialMedia from '../Components/SocialMedia'
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { useGSAP } from "@gsap/react";
-import Window from '../Components/Window'
 import WordScroller from '../Components/WordScroller'
 import FeaturedProjects from '../Components/FeaturedProjects';
+import FeatProjectSlider from '../Components/FeatProjectSlider'
 
 export default function Home() {
-  console.log(window.innerWidth)
-
   gsap.registerPlugin(useGSAP)
   gsap.registerPlugin(MotionPathPlugin) 
 
@@ -110,6 +108,7 @@ export default function Home() {
       </section>
       <WordScroller></WordScroller>
       <FeaturedProjects></FeaturedProjects>
+      <FeatProjectSlider></FeatProjectSlider>
     </main>
   );
 }

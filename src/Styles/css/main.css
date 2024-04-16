@@ -717,6 +717,9 @@ main {
   text-wrap: nowrap;
   letter-spacing: 1.15rem;
 }
+.word-scroller .scroller .word:hover {
+  color: #ff5a43;
+}
 .word-scroller .scroller-green {
   background-color: #1b998b;
 }
@@ -769,4 +772,61 @@ main {
 .featured-projects .projects-image {
   transform: translateX(-20vw);
   width: 70vw;
+}
+
+.feat-project-slider {
+  margin-top: 15rem;
+  margin-bottom: 15rem;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feat-project-slider .feat-project-card {
+  width: 80vw;
+  background-color: white;
+  aspect-ratio: 16/7;
+  background-image: url(../../../public/images/game-project.png);
+}
+.feat-project-slider .feat-project-card .blur-background {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  background-color: rgba(18, 18, 18, 0.2431372549);
+}
+.feat-project-slider .feat-project-card .blur-background h1 {
+  padding-top: 1rem;
+  padding-left: 2.5rem;
+  font-weight: 700;
+  font-size: 2.75rem;
+  letter-spacing: 10px;
+}
+.feat-project-slider .feat-project-card .blur-background h3 {
+  padding-left: 5rem;
+  padding-top: 1rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  color: #ff5a43;
+}
+.feat-project-slider .feat-project-card .blur-background p {
+  font-size: 1rem;
+  padding-top: 1.5rem;
+  padding-left: 7rem;
+  height: 60%;
+}
+.feat-project-slider .feat-project-card .blur-background .horiz-line {
+  height: 3px;
+  width: 90%;
+  background-color: #1b998b;
+  margin-left: 5%;
+}
+.feat-project-slider .feat-project-card .blur-background a {
+  height: 75px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4rem;
+  margin-top: 0.5rem;
 }/*# sourceMappingURL=main.css.map */

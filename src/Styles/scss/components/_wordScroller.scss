@@ -31,6 +31,11 @@
 		align-items: center;
 		text-wrap: nowrap;
 		letter-spacing: 1.15rem;
+		.word {
+			&:hover {
+				color: #ff5a43;
+			}
+		}
 	}
 	.scroller-green {
 		background-color: #1b998b;
