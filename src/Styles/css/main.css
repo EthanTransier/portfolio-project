@@ -753,4 +753,20 @@ main {
   font-size: 1.15rem;
   letter-spacing: 5px;
   position: absolute;
+}
+
+.featured-projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15vh;
+}
+.featured-projects .featured-image {
+  transform: translateX(20vw);
+  width: 70vw;
+}
+.featured-projects .projects-image {
+  transform: translateX(-20vw);
+  width: 70vw;
 }/*# sourceMappingURL=main.css.map */

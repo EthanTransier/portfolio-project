@@ -1,0 +1,15 @@
+.featured-projects {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 15vh;
+	.featured-image {
+		transform: translateX(20vw);
+		width: 70vw;
+	}
+	.projects-image {
+		transform: translateX(-20vw);
+		width: 70vw;
+	}
+}

@@ -109,7 +109,7 @@ export default function Home() {
         <SocialMedia></SocialMedia>
       </section>
       <WordScroller></WordScroller>
-      {/* <FeaturedProjects></FeaturedProjects> */}
+      <FeaturedProjects></FeaturedProjects>
     </main>
   );
 }
