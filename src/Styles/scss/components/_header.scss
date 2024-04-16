@@ -5,6 +5,7 @@
 	margin-top: 9px;
 	position: fixed;
 	pointer-events: none;
+	z-index: 500;
 	.hamburger-nav {
 		display: none;
 		pointer-events: auto;

@@ -7,6 +7,8 @@ import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { useGSAP } from "@gsap/react";
 import Window from '../Components/Window'
+import WordScroller from '../Components/WordScroller'
+import FeaturedProjects from '../Components/FeaturedProjects';
 
 export default function Home() {
   console.log(window.innerWidth)
@@ -106,6 +108,8 @@ export default function Home() {
         <img src="/images/main-shape.svg" alt="main landing shape" height={'175'} width={'175'} className='main-shape' id='main-shape'/>
         <SocialMedia></SocialMedia>
       </section>
+      <WordScroller></WordScroller>
+      {/* <FeaturedProjects></FeaturedProjects> */}
     </main>
   );
 }
