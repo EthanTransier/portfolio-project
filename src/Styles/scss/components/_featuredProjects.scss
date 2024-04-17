@@ -5,11 +5,11 @@
 	flex-direction: column;
 	gap: 15vh;
 	.featured-image {
-		transform: translateX(20vw);
+		transform: translateX(40vw);
 		width: 70vw;
 	}
 	.projects-image {
-		transform: translateX(-20vw);
+		transform: translateX(-40vw);
 		width: 70vw;
 	}
 }

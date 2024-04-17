@@ -59,19 +59,17 @@
 			font-weight: 600;
 			font-size: 1.15rem;
 			letter-spacing: 5px;
+			box-sizing: border-box;
 		}
-		.scroller-button-border {
-			background-color: transparent;
-			border: 2px solid #1b998b;
-			width: 20rem;
-			height: 55px;
-			overflow: hidden;
-			border-radius: 400px;
-			color: white;
-			font-weight: 600;
-			font-size: 1.15rem;
-			letter-spacing: 5px;
+		.scroller-button-svg {
+			width: 326px;
+			height: 61px;
 			position: absolute;
+			z-index: 5;
+			pointer-events: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 	}
 }

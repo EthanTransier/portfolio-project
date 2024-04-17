@@ -581,11 +581,11 @@ main {
 
 .heatmap {
   display: grid;
-  gap: 4px;
-  grid-template-columns: repeat(52, 10px);
+  gap: 6px;
+  grid-template-columns: repeat(52, 15px);
 }
 .heatmap .shape {
-  width: 10px;
+  width: 15px;
   aspect-ratio: 1/1;
   background-color: #37a445;
   border-radius: 2px;
@@ -743,19 +743,17 @@ main {
   font-weight: 600;
   font-size: 1.15rem;
   letter-spacing: 5px;
+  box-sizing: border-box;
 }
-.word-scroller .scroller-button-container .scroller-button-border {
-  background-color: transparent;
-  border: 2px solid #1b998b;
-  width: 20rem;
-  height: 55px;
-  overflow: hidden;
-  border-radius: 400px;
-  color: white;
-  font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: 5px;
+.word-scroller .scroller-button-container .scroller-button-svg {
+  width: 326px;
+  height: 61px;
   position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .featured-projects {
@@ -766,11 +764,11 @@ main {
   gap: 15vh;
 }
 .featured-projects .featured-image {
-  transform: translateX(20vw);
+  transform: translateX(40vw);
   width: 70vw;
 }
 .featured-projects .projects-image {
-  transform: translateX(-20vw);
+  transform: translateX(-40vw);
   width: 70vw;
 }
 

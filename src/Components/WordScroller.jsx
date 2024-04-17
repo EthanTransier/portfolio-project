@@ -30,7 +30,10 @@ const WordScroller = () => {
         </div>
         <div className="scroller-button-container">
             <button className="scroller-button">Discover Me</button>
-            <button className="scroller-button-border">Discover Me</button>
+            {/* <button className="scroller-button-border">Discover Me</button> */}
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326 61" className='scroller-button-svg'>
+                <rect class="cls-1" x=".5" y=".5" width="20rem" height="55px" rx="27.5" ry="27.5"  fill="none" stroke="#1b998b" strokeWidth="3" strokeLinejoin="round"/>
+            </svg>
         </div>
     </div>
   )
