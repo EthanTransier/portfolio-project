@@ -733,27 +733,36 @@ main {
   width: 100vw;
   margin-top: 10rem;
 }
-.word-scroller .scroller-button-container .scroller-button {
-  background-color: transparent;
-  border: 2px solid white;
-  width: 20rem;
-  height: 55px;
-  border-radius: 400px;
-  color: white;
-  font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: 5px;
-  box-sizing: border-box;
-}
-.word-scroller .scroller-button-container .scroller-button-svg {
-  width: 326px;
-  height: 61px;
-  position: absolute;
-  z-index: 5;
-  pointer-events: none;
+.word-scroller .scroller-button-container .button-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+}
+.word-scroller .scroller-button-container .button-container:hover .animate-button-2 {
+  stroke-dasharray: 749.65, 0;
+}
+.word-scroller .scroller-button-container .button-container .button {
+  position: absolute;
+}
+.word-scroller .scroller-button-container .button-container .base-button {
+  z-index: 1;
+}
+.word-scroller .scroller-button-container .button-container .animate-button-1 {
+  z-index: 2;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: -1000;
+  transition: 1s ease;
+}
+.word-scroller .scroller-button-container .button-container .animate-button-2 {
+  z-index: 2;
+  stroke-dasharray: 0, 749.65;
+  stroke-dashoffset: 100;
+  transition: 1s ease;
+}
+.word-scroller .scroller-button-container .button-container p {
+  color: white;
+  text-align: center;
 }
 
 .featured-projects {

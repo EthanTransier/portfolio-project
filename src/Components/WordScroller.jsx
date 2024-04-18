@@ -1,6 +1,7 @@
-import React from 'react'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import {useEffect} from 'react';
+import anime from "animejs";
 
 const WordScroller = () => {
     gsap.registerPlugin(useGSAP)
@@ -29,11 +30,19 @@ const WordScroller = () => {
             <div className="scroller scroller-green">&nbsp;Disciplined Adaptable Enthusiastic Visionary Self-motivated Positive Leadership</div>
         </div>
         <div className="scroller-button-container">
-            <button className="scroller-button">Discover Me</button>
-            {/* <button className="scroller-button-border">Discover Me</button> */}
-            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326 61" className='scroller-button-svg'>
-                <rect class="cls-1" x=".5" y=".5" width="20rem" height="55px" rx="27.5" ry="27.5"  fill="none" stroke="#1b998b" strokeWidth="3" strokeLinejoin="round"/>
-            </svg>
+            <div className='button-container'>
+                <p>Discover Me</p>
+                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="321" height="56" viewBox="0 0 321 56" className='base-button button'>
+                    <rect x="1.5" y="1.5" width="318" height="53" rx="27" ry="27" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" stroke-width="3"/>
+                </svg>
+                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="321" height="56" viewBox="0 0 321 56" className='animate-button-1 button'>
+                    <rect x="1.5" y="1.5" width="318" height="53" rx="27" ry="27" fill="none" stroke="#1b998b" stroke-miterlimit="10" stroke-width="3"/>
+                </svg>
+                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="321" height="56" viewBox="0 0 321 56" className='animate-button-2 button'>
+                    <rect x="1.5" y="1.5" width="318" height="53" rx="27" ry="27" fill="none" stroke="#1b998b" stroke-miterlimit="10" stroke-width="3"/>
+                </svg>
+            </div>
+            
         </div>
     </div>
   )

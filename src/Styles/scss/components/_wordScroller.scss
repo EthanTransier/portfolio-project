@@ -49,27 +49,47 @@
 		justify-content: center;
 		width: 100vw;
 		margin-top: 10rem;
-		.scroller-button {
-			background-color: transparent;
-			border: 2px solid white;
-			width: 20rem;
-			height: 55px;
-			border-radius: 400px;
-			color: white;
-			font-weight: 600;
-			font-size: 1.15rem;
-			letter-spacing: 5px;
-			box-sizing: border-box;
-		}
-		.scroller-button-svg {
-			width: 326px;
-			height: 61px;
-			position: absolute;
-			z-index: 5;
-			pointer-events: none;
+		.button-container {
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			color: white;
+			&:hover {
+				// .animate-button-1 {
+				// 	stroke-dashoffset: 0;
+				// }
+				.animate-button-2 {
+					stroke-dasharray: 749.65, 0;
+					// stroke-dashoffset: 0;
+				}
+			}
+			.button {
+				position: absolute;
+				// transform: translateX(-50%);
+			}
+			.base-button {
+				z-index: 1;
+			}
+			.animate-button-1 {
+				z-index: 2;
+				stroke-dasharray: 1000;
+				stroke-dashoffset: -1000;
+				transition: 1s ease;
+				// &:hover {
+				// 	stroke-dashoffset: 0;
+				// }
+			}
+			.animate-button-2 {
+				z-index: 2;
+				stroke-dasharray: 0, 749.65;
+				stroke-dashoffset: 100;
+				transition: 1s ease;
+				// transform: rotate(180deg);
+			}
+			p {
+				color: white;
+				text-align: center;
+			}
 		}
 	}
 }
