@@ -43,29 +43,39 @@
 	.scroller-red {
 		background-color: #ff5a43;
 	}
+	// I HATE animating srtoke. Never ask me to do this again. I've lost over 7 hours of my life towards this stupid stupid button. NEVER AGAIN
 	.scroller-button-container {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		width: 100vw;
 		margin-top: 10rem;
+		a {
+			text-decoration: none;
+		}
 		.button-container {
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			color: white;
+			font-size: 1.15rem;
+			p {
+				font-weight: 500;
+				letter-spacing: 3px;
+				transition: 0.25s ease-in-out;
+				text-decoration: none;
+			}
 			&:hover {
-				// .animate-button-1 {
-				// 	stroke-dashoffset: 0;
-				// }
+				p {
+					font-weight: 600;
+					letter-spacing: 5px;
+				}
 				.animate-button-2 {
-					stroke-dasharray: 749.65, 0;
-					// stroke-dashoffset: 0;
+					stroke-dasharray: 695.2254028320312, 0;
 				}
 			}
 			.button {
 				position: absolute;
-				// transform: translateX(-50%);
 			}
 			.base-button {
 				z-index: 1;
@@ -75,16 +85,12 @@
 				stroke-dasharray: 1000;
 				stroke-dashoffset: -1000;
 				transition: 1s ease;
-				// &:hover {
-				// 	stroke-dashoffset: 0;
-				// }
 			}
 			.animate-button-2 {
 				z-index: 2;
-				stroke-dasharray: 0, 749.65;
-				stroke-dashoffset: 100;
-				transition: 1s ease;
-				// transform: rotate(180deg);
+				stroke-dasharray: 0, 695.2254028320312;
+				stroke-dashoffset: 41;
+				transition: 0.5s ease-in-out;
 			}
 			p {
 				color: white;

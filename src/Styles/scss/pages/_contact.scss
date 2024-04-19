@@ -1,0 +1,60 @@
+.contact-main {
+	h1 {
+		text-align: center;
+		font-weight: 700;
+		font-size: 65px;
+		padding-bottom: 3rem;
+		padding-top: 3rem;
+		letter-spacing: 6px;
+	}
+	.contact-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100vw;
+		height: 70vh;
+		section {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			flex-direction: column;
+			width: calc(50% - 1.5rem);
+			height: 100%;
+			h2 {
+				font-weight: 800;
+				font-size: 2rem;
+				padding-top: 2rem;
+				position: relative;
+			}
+		}
+		.email-section {
+			background-color: white;
+			color: black;
+		}
+		.social-section {
+			// padding-top: 50%;
+			background-color: black;
+			color: white;
+			.social-media-container {
+				position: relative;
+				right: 0;
+				@media (max-width: 651px) {
+					left: 0rem;
+					right: auto;
+					flex-direction: row;
+					margin-top: 0rem;
+				}
+			}
+		}
+		.red-line {
+			width: 1.5rem;
+			height: 100%;
+			background-color: #ff5a43;
+		}
+		.green-line {
+			background-color: #1b998b;
+			width: 1.5rem;
+			height: 100%;
+		}
+	}
+}

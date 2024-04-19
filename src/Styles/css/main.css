@@ -230,6 +230,7 @@ main {
   position: relative;
   transform: translateY(-1px);
   text-decoration: none;
+  text-shadow: 2px 2px 1px #111111;
 }
 .header nav .links-container a:hover {
   border-top: 1px solid #ff5a43;
@@ -733,14 +734,28 @@ main {
   width: 100vw;
   margin-top: 10rem;
 }
+.word-scroller .scroller-button-container a {
+  text-decoration: none;
+}
 .word-scroller .scroller-button-container .button-container {
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+  font-size: 1.15rem;
+}
+.word-scroller .scroller-button-container .button-container p {
+  font-weight: 500;
+  letter-spacing: 3px;
+  transition: 0.25s ease-in-out;
+  text-decoration: none;
+}
+.word-scroller .scroller-button-container .button-container:hover p {
+  font-weight: 600;
+  letter-spacing: 5px;
 }
 .word-scroller .scroller-button-container .button-container:hover .animate-button-2 {
-  stroke-dasharray: 749.65, 0;
+  stroke-dasharray: 695.225402832, 0;
 }
 .word-scroller .scroller-button-container .button-container .button {
   position: absolute;
@@ -756,9 +771,9 @@ main {
 }
 .word-scroller .scroller-button-container .button-container .animate-button-2 {
   z-index: 2;
-  stroke-dasharray: 0, 749.65;
-  stroke-dashoffset: 100;
-  transition: 1s ease;
+  stroke-dasharray: 0, 695.225402832;
+  stroke-dashoffset: 41;
+  transition: 0.5s ease-in-out;
 }
 .word-scroller .scroller-button-container .button-container p {
   color: white;
@@ -836,4 +851,64 @@ main {
   justify-content: center;
   margin-left: 4rem;
   margin-top: 0.5rem;
+}
+
+.contact-main h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 65px;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  letter-spacing: 6px;
+}
+.contact-main .contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 70vh;
+}
+.contact-main .contact-container section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: calc(50% - 1.5rem);
+  height: 100%;
+}
+.contact-main .contact-container section h2 {
+  font-weight: 800;
+  font-size: 2rem;
+  padding-top: 2rem;
+  position: relative;
+}
+.contact-main .contact-container .email-section {
+  background-color: white;
+  color: black;
+}
+.contact-main .contact-container .social-section {
+  background-color: black;
+  color: white;
+}
+.contact-main .contact-container .social-section .social-media-container {
+  position: relative;
+  right: 0;
+}
+@media (max-width: 651px) {
+  .contact-main .contact-container .social-section .social-media-container {
+    left: 0rem;
+    right: auto;
+    flex-direction: row;
+    margin-top: 0rem;
+  }
+}
+.contact-main .contact-container .red-line {
+  width: 1.5rem;
+  height: 100%;
+  background-color: #ff5a43;
+}
+.contact-main .contact-container .green-line {
+  background-color: #1b998b;
+  width: 1.5rem;
+  height: 100%;
 }/*# sourceMappingURL=main.css.map */
