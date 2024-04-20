@@ -102,7 +102,9 @@ footer {
 			color: white;
 			flex-direction: column;
 			text-align: center;
+			gap: 3rem;
 			.mobile-name {
+				margin-top: 2rem;
 				h1 {
 					font-weight: 800;
 					font-size: 1.75rem;
@@ -118,10 +120,31 @@ footer {
 				display: flex;
 				flex-direction: column;
 				text-align: center;
+				gap: 0.5rem;
 				a {
 					color: white;
 					text-decoration: none;
+					font-size: 1.15rem;
+					font-weight: 300;
+					letter-spacing: 0.75rem;
+					transform: translateX(0.375rem);
+					transition: 0.1s ease-in-out;
+					&:hover {
+						color: #ff5a43;
+						font-weight: 500;
+					}
 				}
+			}
+			.mobile-socials {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 2rem;
+				img {
+					height: 2rem;
+					width: auto;
+				}
+				padding-bottom: 2rem;
 			}
 		}
 	}

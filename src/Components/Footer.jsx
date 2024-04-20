@@ -89,6 +89,11 @@ const Footer = () => {
                     CONTACT
                 </Link>
             </div>
+            <div className="mobile-socials">
+                <Image src={'/images/instagram.svg'} alt="instagram" height="48" width="48"></Image>
+                <Image src={'/images/github.svg'} alt="github" height="48" width="48"></Image>
+                <Image src={'/images/linkedin.svg'} alt="linkedin" height="48" width="48"></Image>
+            </div>
         </section>
         <div className="bottom-row-container">
             <div className="bottom-red"></div>
