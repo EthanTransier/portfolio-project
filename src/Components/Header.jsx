@@ -1,6 +1,6 @@
 import Navbar from './Navbar'
 import {useState} from 'react'
-const header = (page) => {
+const Header = (page) => {
   const [navState, setNavState] = useState(false)
   // controls whether the mobile nav is open or closed
   function openNav(){
@@ -21,4 +21,4 @@ const header = (page) => {
   )
 }
 
-export default header
+export default Header
