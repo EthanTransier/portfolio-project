@@ -2,6 +2,7 @@
 import Header from '../../Components/Header'
 import Heatmap from '../../Components/Heatmap'
 import Timeline from '../../Components/Timeline'
+import Footer from '../../Components/Footer'
 export default function Home() {
   return (
     <main>
@@ -10,6 +11,7 @@ export default function Home() {
         <Heatmap></Heatmap>
       </section>
       <Timeline></Timeline>
+      <Footer></Footer>
     </main>
   );
 }

@@ -1,6 +1,7 @@
 'use client'
 import Header from '../../Components/Header'
 import SocialMedia from '../../Components/SocialMedia'
+import Footer from '../../Components/Footer'
 export default function Home() {
   return (
     <main className='contact-main'>
@@ -17,6 +18,7 @@ export default function Home() {
           <SocialMedia></SocialMedia>
         </section>
       </section>
+      <Footer></Footer>
     </main>
   );
 }

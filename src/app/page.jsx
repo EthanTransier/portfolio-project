@@ -9,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 import WordScroller from '../Components/WordScroller'
 import FeaturedProjects from '../Components/FeaturedProjects';
 import FeatProjectSlider from '../Components/FeatProjectSlider'
+import Footer from '../Components/Footer'
 
 export default function Home() {
   gsap.registerPlugin(useGSAP)
@@ -109,6 +110,7 @@ export default function Home() {
       <WordScroller></WordScroller>
       <FeaturedProjects></FeaturedProjects>
       <FeatProjectSlider></FeatProjectSlider>
+      <Footer></Footer>
     </main>
   );
 }
