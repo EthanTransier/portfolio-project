@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Matter from 'matter-js';
 // import './styles.css'; // Import your CSS file
 
-const Box = ({text}) => {
+const Box = () => {
   const boxRef1 = useRef(null);
   const boxRef2 = useRef(null);
   const boxRef3 = useRef(null);
@@ -236,9 +236,7 @@ const Box = ({text}) => {
 const Skills = () => {
   return (
     <div className="container">
-      <Box text={"HTML"}/>
-      {/* <Box text={"CSS"}/>
-      <Box text={"JAVASCRIPT"}/> */}
+      <Box/>
       <div className="left-wall"></div>
       <div className="right-wall"></div>
       <div className="top-wall"></div>
