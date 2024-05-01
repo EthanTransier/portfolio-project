@@ -1,19 +1,130 @@
-.rotating-circle {
-	position: relative;
-	width: 200px; // Adjust the width and height as needed
-	height: 200px;
-	cursor: pointer;
-	user-select: none; // Disable text selection while dragging
-
-	.circle {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 100%;
-		height: 100%;
-		border-radius: 50%;
-		background-color: blue;
-		border: 3px dashed white;
+.main-projects {
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	#projects-circle {
+		width: 180rem;
+		height: 180rem;
+		aspect-ratio: 1/1;
+		border-radius: 90rem;
+		// border-radius: 2000px;
+		// background-color: white;
+		transform: translateY(150vh);
+		z-index: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.project-card {
+			width: 20rem;
+			height: 30rem;
+			background-color: white;
+			transform: translateY(-150vh);
+			position: absolute;
+			border-radius: 4rem;
+			background-position: center;
+			background-size: cover;
+			.cover {
+				display: flex;
+				flex-direction: column-reverse;
+				justify-content: space-between;
+				align-items: flex-end;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.615);
+				border-radius: 4rem;
+				.title-container {
+					display: flex;
+					flex-direction: column-reverse;
+					width: 100%;
+					.title {
+						color: white;
+						font-size: 2rem;
+						margin-left: 1.25rem;
+						padding-bottom: 1.25rem;
+						letter-spacing: 0.2rem;
+					}
+					.date {
+						color: #1b998b;
+						font-size: 1.1rem;
+						margin-left: 1rem;
+						padding-bottom: 0.5rem;
+						letter-spacing: 0.3rem;
+						font-weight: 600;
+					}
+				}
+				img {
+					margin-right: 1.5rem;
+					margin-top: 1.5rem;
+					width: 2.5rem;
+				}
+			}
+		}
+		.project-not-found {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			color: white;
+			font-size: 1.3rem;
+			text-align: center;
+			background-color: #060606;
+			overflow: hidden;
+			.add-project {
+				// margin-top: 2rem;
+				cursor: pointer;
+				height: calc(100% - 2.5rem);
+				width: calc(100% - 2.5rem);
+				border: 1px solid white;
+				border-radius: 2rem;
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				font-size: 1rem;
+				.notfound {
+					font-size: 3rem;
+					font-weight: 700;
+					margin-bottom: 5rem;
+					letter-spacing: 0.6rem;
+				}
+			}
+		}
+		#card-2 {
+			transform: rotate(30deg) translateY(-150vh);
+		}
+		#card-3 {
+			transform: rotate(-30deg) translateY(-150vh);
+		}
+		#card-4 {
+			transform: rotate(60deg) translateY(-150vh);
+		}
+		#card-5 {
+			transform: rotate(-60deg) translateY(-150vh);
+		}
+		#card-6 {
+			transform: rotate(90deg) translateY(-150vh);
+		}
+		#card-7 {
+			transform: rotate(-90deg) translateY(-150vh);
+		}
+		#card-8 {
+			transform: rotate(120deg) translateY(-150vh);
+		}
+		#card-9 {
+			transform: rotate(-120deg) translateY(-150vh);
+		}
+		#card-10 {
+			transform: rotate(150deg) translateY(-150vh);
+		}
+		#card-11 {
+			transform: rotate(-150deg) translateY(-150vh);
+		}
+		#card-12 {
+			transform: rotate(180deg) translateY(-150vh);
+		}
 	}
 }

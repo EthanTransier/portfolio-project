@@ -803,54 +803,67 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100vw;
 }
 .feat-project-slider .feat-project-card {
-  width: 80vw;
-  background-color: white;
-  aspect-ratio: 16/7;
-  background-image: url(../../../public/images/game-project.png);
+  color: white;
+  width: 20vw;
+  aspect-ratio: 9/13;
+  border-radius: 2.5rem;
+  perspective: 1000px;
 }
-.feat-project-slider .feat-project-card .blur-background {
+.feat-project-slider .feat-project-card:hover .inner {
+  transform: rotateX(180deg);
+}
+.feat-project-slider .feat-project-card .inner {
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(3px);
-  background-color: rgba(18, 18, 18, 0.2431372549);
+  position: relative;
+  transition: 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  background-position: center;
+  background-size: cover;
+  border-radius: 2.5rem;
 }
-.feat-project-slider .feat-project-card .blur-background h1 {
-  padding-top: 1rem;
-  padding-left: 2.5rem;
-  font-weight: 700;
-  font-size: 2.75rem;
-  letter-spacing: 10px;
+.feat-project-slider .feat-project-card .inner div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 2.5rem;
+  background-position: 45% 50%;
+  background-size: cover;
 }
-.feat-project-slider .feat-project-card .blur-background h3 {
-  padding-left: 5rem;
-  padding-top: 1rem;
+.feat-project-slider .feat-project-card .inner .back {
+  transform: rotateX(180deg);
+  background-position: center;
+  background-size: cover;
+}
+.feat-project-slider .feat-project-card .inner .back .content {
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.766);
+  width: 100%;
+  height: 100%;
+}
+.feat-project-slider .feat-project-card .inner .back h1 {
+  color: white;
+  padding-left: 10%;
+  padding-top: 4%;
+  font-size: 1.6rem;
+  letter-spacing: 5px;
+}
+.feat-project-slider .feat-project-card .inner .back h3 {
+  padding-left: 10%;
+  padding-top: 3%;
+  color: #1b998b;
   font-weight: 600;
-  font-size: 1.5rem;
-  letter-spacing: 4px;
-  color: #ff5a43;
+  font-size: 1.05rem;
 }
-.feat-project-slider .feat-project-card .blur-background p {
-  font-size: 1rem;
-  padding-top: 1.5rem;
-  padding-left: 7rem;
-  height: 60%;
-}
-.feat-project-slider .feat-project-card .blur-background .horiz-line {
-  height: 3px;
-  width: 90%;
-  background-color: #1b998b;
-  margin-left: 5%;
-}
-.feat-project-slider .feat-project-card .blur-background a {
-  height: 75px;
-  aspect-ratio: 1/1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 4rem;
-  margin-top: 0.5rem;
+.feat-project-slider .feat-project-card .inner .back a {
+  position: absolute;
+  bottom: 0;
+  transform: translate(1.5rem, -1rem);
 }
 
 .contact-main h1 {
@@ -1188,21 +1201,130 @@ canvas {
   transform: translate(0%, -120px);
 }
 
-.rotating-circle {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  cursor: pointer;
-  user-select: none;
+.main-projects {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.rotating-circle .circle {
+.main-projects #projects-circle {
+  width: 180rem;
+  height: 180rem;
+  aspect-ratio: 1/1;
+  border-radius: 90rem;
+  transform: translateY(150vh);
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-projects #projects-circle .project-card {
+  width: 20rem;
+  height: 30rem;
+  background-color: white;
+  transform: translateY(-150vh);
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  border-radius: 4rem;
+  background-position: center;
+  background-size: cover;
+}
+.main-projects #projects-circle .project-card .cover {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: flex-end;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  background-color: blue;
-  border: 3px dashed white;
+  background-color: rgba(0, 0, 0, 0.615);
+  border-radius: 4rem;
+}
+.main-projects #projects-circle .project-card .cover .title-container {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+}
+.main-projects #projects-circle .project-card .cover .title-container .title {
+  color: white;
+  font-size: 2rem;
+  margin-left: 1.25rem;
+  padding-bottom: 1.25rem;
+  letter-spacing: 0.2rem;
+}
+.main-projects #projects-circle .project-card .cover .title-container .date {
+  color: #1b998b;
+  font-size: 1.1rem;
+  margin-left: 1rem;
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.3rem;
+  font-weight: 600;
+}
+.main-projects #projects-circle .project-card .cover img {
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+  width: 2.5rem;
+}
+.main-projects #projects-circle .project-not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  font-size: 1.3rem;
+  text-align: center;
+  background-color: #060606;
+  overflow: hidden;
+}
+.main-projects #projects-circle .project-not-found .add-project {
+  cursor: pointer;
+  height: calc(100% - 2.5rem);
+  width: calc(100% - 2.5rem);
+  border: 1px solid white;
+  border-radius: 2rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.main-projects #projects-circle .project-not-found .add-project .notfound {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 5rem;
+  letter-spacing: 0.6rem;
+}
+.main-projects #projects-circle #card-2 {
+  transform: rotate(30deg) translateY(-150vh);
+}
+.main-projects #projects-circle #card-3 {
+  transform: rotate(-30deg) translateY(-150vh);
+}
+.main-projects #projects-circle #card-4 {
+  transform: rotate(60deg) translateY(-150vh);
+}
+.main-projects #projects-circle #card-5 {
+  transform: rotate(-60deg) translateY(-150vh);
+}
+.main-projects #projects-circle #card-6 {
+  transform: rotate(90deg) translateY(-150vh);
+}
+.main-projects #projects-circle #card-7 {
+  transform: rotate(-90deg) translateY(-150vh);
+}
+.main-projects #projects-circle #card-8 {
+  transform: rotate(120deg) translateY(-150vh);
+}
+.main-projects #projects-circle #card-9 {
+  transform: rotate(-120deg) translateY(-150vh);
+}
+.main-projects #projects-circle #card-10 {
+  transform: rotate(150deg) translateY(-150vh);
+}
+.main-projects #projects-circle #card-11 {
+  transform: rotate(-150deg) translateY(-150vh);
+}
+.main-projects #projects-circle #card-12 {
+  transform: rotate(180deg) translateY(-150vh);
 }/*# sourceMappingURL=main.css.map */
