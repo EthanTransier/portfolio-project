@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import {Draggable} from 'gsap/Draggable'
-import ProjectCard from '@/components/ProjectCard'
+import ProjectCard from '../components/ProjectCard'
 
 const Projects = () => {
   useGSAP(() => {
