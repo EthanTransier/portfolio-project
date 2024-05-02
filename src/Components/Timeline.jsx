@@ -1,8 +1,18 @@
 import {useState, useRef, useEffect} from 'react'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+// import TextScramble from '../Components/TextScrambler'
 
 const Timeline = () => {
+    // const phrases = [
+    //     'Neo,',
+    //     'sooner or later',
+    //     "you're going to realize",
+    //     'just as I did',
+    //     "that there's a difference",
+    //     'between knowing the path',
+    //     'and walking the path'
+    // ];
     // States for if the years are open, 2022, 2023, and 2024
     const [firstState, setFirstState] = useState(false)
     const [secondState, setSecondState] = useState(false)
@@ -183,7 +193,12 @@ const Timeline = () => {
             firstTitles[i].current.className = ""
         }
         firstTitles[item].current.className = 'red-text'
-        firstText.current.innerHTML = firstInfo[item]
+        gsap.timeline()
+            .to(`#first-text-container`, {
+                translateY: `${-100 * item}%`,
+                ease: "circ.inOut",
+                duration: 0.35
+            })
         firstTextTitle.current.innerHTML = firstTitles[item].current.innerHTML
     }
 
@@ -194,7 +209,7 @@ const Timeline = () => {
         <section className='timeline-info-container' ref={infoContainerFirst} id='first-info'>
             <div className="timeline-left">
                 <h3>WEST-MEC Y2S2</h3>
-                <p onClick={() => openFirstInfo(0)} ref={firstInfo1}>OFFICER WORK CONT</p>
+                <p onClick={() => openFirstInfo(0)} ref={firstInfo1} className='red-text'>OFFICER WORK CONT</p>
                 <p onClick={() => openFirstInfo(1)} ref={firstInfo2}>PROJECTS</p>
                 <h3>FBLA</h3>
                 <p onClick={() => openFirstInfo(2)} ref={firstInfo3}>WEB DESIGN</p>
@@ -204,8 +219,15 @@ const Timeline = () => {
                 <p onClick={() => openFirstInfo(5)} ref={firstInfo6}>6 WEEK INTERNSHIP</p>
             </div>
             <div className="timeline-right">
-                <h2 ref={firstTextTitle}>6 WEEK INTERNSHIP</h2>
-                <p ref={firstText}>volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in </p>
+                <h2 ref={firstTextTitle}>OFFICER WORK CONT</h2>
+                <div ref={firstText} className='timeline-text-container' id='first-text-container'>
+                        <div>During my second semester at West-MEC as an FBLA Officer, I worked closely with my team to plan events like FBLA Regionals and State, emphasizing teamwork and communication. I also played a key role in organizing fundraisers to support our coding program, engaging with the community to ensure success. My dedication to fostering unity within our chapter was vital for our collective achievements and the growth of our coding initiatives.</div>
+                        <div>This semester at West-MEC, I completed a Unity game project and began work on an EMR Web Application for the Medical Assisting programs. While honing my skills in React and Next.js, I delved into both frontend and backend web development, showcasing my commitment to continuous learning and practical application.</div>
+                        <div>At FBLA State, I competed in the Web Design Competition and secured 6th place in the state, earning a spot for Nationals. My project was a Gala Website designed for a local adoption center aimed at fundraising. Crafting a visually appealing and user-friendly platform, I showcased my skills in web design and digital creativity. This achievement highlights my ability to combine technical proficiency with creative flair.</div>
+                        <div>At FBLA State, I competed in the Graphic Design competition, where my peers and I simulated a marketing firm, crafting a branding package for a local bakery. Our collaborative effort yielded a visually captivating brand identity, showcasing our graphic design talents. This experience highlighted our ability to translate creative vision into effective design elements, earning recognition and validation for our innovative approach.</div>
+                        <div>Volunteering for 10 hours at Feed My Starving Children was eye-opening. Witnessing the collective effort to pack meals for malnourished children globally left a lasting impact. It reinforced my dedication to service and ignited a sense of empathy and compassion within me, motivating me to continue contributing to positive change in the world.</div>
+                        <div>volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in </div>
+                </div>
             </div>
         </section>
         <h1 onClick={() => open('second', infoContainerSecond)} onMouseEnter={() => enter('second')} onMouseLeave={() => leave('second')}>20<span>23</span></h1>
@@ -226,7 +248,7 @@ const Timeline = () => {
             </div>
             <div className="timeline-right">
                 <h2>6 WEEK INTERNSHIP</h2>
-                <p>volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in </p>
+                
             </div>
         </section>
         <h1 id='third-title' onClick={() => open('third', infoContainerThird)} onMouseEnter={() => enter('third')} onMouseLeave={() => leave('third')}>20<span>24</span></h1>
