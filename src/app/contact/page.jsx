@@ -10,6 +10,7 @@ export default function Home() {
       <section className="contact-container">
         <section className="email-section">
           <h2>EMAIL ME</h2>
+          <a href="mailto:etrans640@gmail.com">Shoot Me a Message</a>
         </section>
         <div className="red-line"></div>
         <div className="green-line"></div>

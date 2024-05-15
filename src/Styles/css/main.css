@@ -884,7 +884,7 @@ main {
 .contact-main h1 {
   text-align: center;
   font-weight: 700;
-  font-size: 65px;
+  font-size: clamp(1.875rem, 0.938rem + 5vw, 4.063rem);
   padding-bottom: 3rem;
   padding-top: 3rem;
   letter-spacing: 6px;
@@ -909,6 +909,17 @@ main {
   font-size: 2rem;
   padding-top: 2rem;
   position: relative;
+  text-align: center;
+}
+.contact-main .contact-container section a {
+  color: black;
+  margin-top: 30%;
+  font-size: 1.25rem;
+}
+@media (max-width: 651px) {
+  .contact-main .contact-container section a {
+    margin-top: 10%;
+  }
 }
 .contact-main .contact-container .email-section {
   background-color: white;
@@ -921,13 +932,14 @@ main {
 .contact-main .contact-container .social-section .social-media-container {
   position: relative;
   right: 0;
+  margin-top: 30%;
 }
 @media (max-width: 651px) {
   .contact-main .contact-container .social-section .social-media-container {
     left: 0rem;
     right: auto;
     flex-direction: row;
-    margin-top: 0rem;
+    margin-top: 10%;
   }
 }
 .contact-main .contact-container .red-line {
@@ -939,6 +951,24 @@ main {
   background-color: #1b998b;
   width: 1.5rem;
   height: 100%;
+}
+@media (max-width: 651px) {
+  .contact-main .contact-container {
+    flex-direction: column;
+    width: 100vw;
+  }
+  .contact-main .contact-container section {
+    width: 100%;
+    height: 50vh;
+  }
+  .contact-main .contact-container .red-line {
+    height: 1.5rem;
+    width: 100%;
+  }
+  .contact-main .contact-container .green-line {
+    height: 1.5rem;
+    width: 100%;
+  }
 }
 
 footer {
