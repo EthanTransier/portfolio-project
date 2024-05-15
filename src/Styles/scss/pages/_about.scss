@@ -1,8 +1,11 @@
 .about-opening {
-  height: 50vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // padding-bottom: 20rem;
+	height: 50vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	// padding-bottom: 20rem;
+	@media (max-width: 651px) {
+		height: 100vh;
+	}
 }

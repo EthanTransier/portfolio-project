@@ -6,6 +6,9 @@
 	margin: 50px auto; /* Adjust as needed */
 	// display: flex;
 	overflow: hidden;
+	// @media (max-width: 651px) {
+	// 	width: 100vw;
+	// }
 }
 canvas {
 	overflow: hidden;
@@ -14,17 +17,19 @@ canvas {
 	position: absolute;
 	background: #ffffff;
 	color: black;
-	height: 80px;
-	width: 140px;
+	height: clamp(2.5rem, 1.702rem + 4.255vw, 5rem);
+	width: clamp(4.375rem, 2.979rem + 7.447vw, 8.75rem);
 	cursor: move;
 	user-select: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	transition: background 0.15s ease-in-out;
+	overflow: hidden;
 	h1 {
 		color: black;
 		transition: color 0.15s ease-in-out;
+		font-size: clamp(0.5rem, 0.34rem + 0.851vw, 1rem);
 	}
 	&:hover {
 		background: #ff5a43;
@@ -32,6 +37,12 @@ canvas {
 			color: white;
 		}
 	}
+}
+#test-box {
+	position: absolute;
+	z-index: -100;
+	height: clamp(2.5rem, 1.702rem + 4.255vw, 5rem);
+	width: clamp(4.375rem, 2.979rem + 7.447vw, 8.75rem);
 }
 
 #polygon {
@@ -49,16 +60,18 @@ canvas {
 	transition: background 0.15s ease-in-out;
 	background: #ffffff;
 	color: black;
-	height: 100px;
-	width: 100px;
+	height: clamp(3.125rem, 2.128rem + 5.319vw, 6.25rem);
+	width: clamp(3.125rem, 2.128rem + 5.319vw, 6.25rem);
 	cursor: move;
 	user-select: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
 	h1 {
 		color: black;
 		transition: color 0.15s ease-in-out;
+		font-size: clamp(0.5rem, 0.34rem + 0.851vw, 1rem);
 	}
 	&:hover {
 		background: #1b998b;
@@ -67,6 +80,12 @@ canvas {
 		}
 	}
 }
+#test-poly {
+	position: absolute;
+	z-index: -100;
+	height: clamp(3.125rem, 2.128rem + 5.319vw, 6.25rem);
+	width: clamp(3.125rem, 2.128rem + 5.319vw, 6.25rem);
+}
 
 #circle {
 	position: absolute;
@@ -74,16 +93,18 @@ canvas {
 	transition: background 0.15s ease-in-out;
 	background: #ffffff;
 	color: black;
-	height: 120px;
-	width: 120px;
+	height: clamp(3.75rem, 2.553rem + 6.383vw, 7.5rem);
+	width: clamp(3.75rem, 2.553rem + 6.383vw, 7.5rem);
 	cursor: move;
 	user-select: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
 	h1 {
 		color: black;
 		transition: color 0.15s ease-in-out;
+		font-size: clamp(0.5rem, 0.34rem + 0.851vw, 1rem);
 	}
 	&:hover {
 		background: #ff5a43;
@@ -91,6 +112,12 @@ canvas {
 			color: white;
 		}
 	}
+}
+#test-circle {
+	position: absolute;
+	z-index: -100;
+	height: clamp(3.75rem, 2.553rem + 6.383vw, 7.5rem);
+	width: clamp(3.75rem, 2.553rem + 6.383vw, 7.5rem);
 }
 
 .ground {

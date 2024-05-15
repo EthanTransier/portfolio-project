@@ -579,17 +579,32 @@ main {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 651px) {
+  .about-opening {
+    height: 100vh;
+  }
+}
 
 .heatmap {
   display: grid;
-  gap: 6px;
-  grid-template-columns: repeat(52, 15px);
+  gap: clamp(0.25rem, 0.115rem + 0.333vw, 0.375rem);
+  grid-template-columns: repeat(52, clamp(0.5rem, 0.026rem + 1.167vw, 0.938rem));
 }
 .heatmap .shape {
-  width: 15px;
+  width: clamp(0.5rem, 0.026rem + 1.167vw, 0.938rem);
   aspect-ratio: 1/1;
   background-color: #37a445;
   border-radius: 2px;
+}
+@media (max-width: 651px) {
+  .heatmap {
+    transform: rotate(90deg);
+    gap: clamp(0.25rem, 0.069rem + 0.444vw, 0.313rem);
+    grid-template-columns: repeat(52, clamp(0.438rem, -0.285rem + 1.778vw, 0.688rem));
+  }
+  .heatmap .shape {
+    width: clamp(0.438rem, -0.285rem + 1.778vw, 0.688rem);
+  }
 }
 
 .timeline-container {
@@ -1095,18 +1110,20 @@ canvas {
   position: absolute;
   background: #ffffff;
   color: black;
-  height: 80px;
-  width: 140px;
+  height: clamp(2.5rem, 1.702rem + 4.255vw, 5rem);
+  width: clamp(4.375rem, 2.979rem + 7.447vw, 8.75rem);
   cursor: move;
   user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.15s ease-in-out;
+  overflow: hidden;
 }
 #box h1 {
   color: black;
   transition: color 0.15s ease-in-out;
+  font-size: clamp(0.5rem, 0.34rem + 0.851vw, 1rem);
 }
 #box:hover {
   background: #ff5a43;
@@ -1115,23 +1132,32 @@ canvas {
   color: white;
 }
 
+#test-box {
+  position: absolute;
+  z-index: -100;
+  height: clamp(2.5rem, 1.702rem + 4.255vw, 5rem);
+  width: clamp(4.375rem, 2.979rem + 7.447vw, 8.75rem);
+}
+
 #polygon {
   position: absolute;
   clip-path: polygon(29% 0%, 71% 0%, 100% 29%, 100% 71%, 71% 100%, 29% 100%, 0% 71%, 0% 29%);
   transition: background 0.15s ease-in-out;
   background: #ffffff;
   color: black;
-  height: 100px;
-  width: 100px;
+  height: clamp(3.125rem, 2.128rem + 5.319vw, 6.25rem);
+  width: clamp(3.125rem, 2.128rem + 5.319vw, 6.25rem);
   cursor: move;
   user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 #polygon h1 {
   color: black;
   transition: color 0.15s ease-in-out;
+  font-size: clamp(0.5rem, 0.34rem + 0.851vw, 1rem);
 }
 #polygon:hover {
   background: #1b998b;
@@ -1140,29 +1166,45 @@ canvas {
   color: white;
 }
 
+#test-poly {
+  position: absolute;
+  z-index: -100;
+  height: clamp(3.125rem, 2.128rem + 5.319vw, 6.25rem);
+  width: clamp(3.125rem, 2.128rem + 5.319vw, 6.25rem);
+}
+
 #circle {
   position: absolute;
   border-radius: 60px;
   transition: background 0.15s ease-in-out;
   background: #ffffff;
   color: black;
-  height: 120px;
-  width: 120px;
+  height: clamp(3.75rem, 2.553rem + 6.383vw, 7.5rem);
+  width: clamp(3.75rem, 2.553rem + 6.383vw, 7.5rem);
   cursor: move;
   user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 #circle h1 {
   color: black;
   transition: color 0.15s ease-in-out;
+  font-size: clamp(0.5rem, 0.34rem + 0.851vw, 1rem);
 }
 #circle:hover {
   background: #ff5a43;
 }
 #circle:hover h1 {
   color: white;
+}
+
+#test-circle {
+  position: absolute;
+  z-index: -100;
+  height: clamp(3.75rem, 2.553rem + 6.383vw, 7.5rem);
+  width: clamp(3.75rem, 2.553rem + 6.383vw, 7.5rem);
 }
 
 .ground {

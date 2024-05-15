@@ -1,11 +1,25 @@
 .heatmap {
 	display: grid;
-	gap: 6px;
-	grid-template-columns: repeat(52, 15px);
+	gap: clamp(0.25rem, 0.115rem + 0.333vw, 0.375rem);
+	grid-template-columns: repeat(
+		52,
+		clamp(0.5rem, 0.026rem + 1.167vw, 0.938rem)
+	);
 	.shape {
-		width: 15px;
+		width: clamp(0.5rem, 0.026rem + 1.167vw, 0.938rem);
 		aspect-ratio: 1/1;
 		background-color: #37a445;
 		border-radius: 2px;
+	}
+	@media (max-width: 651px) {
+		transform: rotate(90deg);
+		gap: clamp(0.25rem, 0.069rem + 0.444vw, 0.313rem);
+		grid-template-columns: repeat(
+			52,
+			clamp(0.438rem, -0.285rem + 1.778vw, 0.688rem)
+		);
+		.shape {
+			width: clamp(0.438rem, -0.285rem + 1.778vw, 0.688rem);
+		}
 	}
 }
