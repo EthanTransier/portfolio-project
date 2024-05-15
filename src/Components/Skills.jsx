@@ -19,6 +19,7 @@ const Box = () => {
   const testCircle = useRef(null)
   const testBox = useRef(null)
   const testPoly = useRef(null)
+  const testWall = useRef(null)
   
 
   useEffect(() => {
@@ -30,7 +31,7 @@ const Box = () => {
     const box1 = {
       w: testBox.current.getBoundingClientRect().width,
       h: testBox.current.getBoundingClientRect().height,
-      body: Matter.Bodies.rectangle(180, 0, testBox.current.getBoundingClientRect().width, testBox.current.getBoundingClientRect().height),
+      body: Matter.Bodies.rectangle(0, 0, testBox.current.getBoundingClientRect().width, testBox.current.getBoundingClientRect().height),
       elem: boxRef1.current,
       render() {
         const { x, y } = this.body.position;
@@ -42,7 +43,7 @@ const Box = () => {
     const box2 = {
       w: testBox.current.getBoundingClientRect().width,
       h: testBox.current.getBoundingClientRect().height,
-      body: Matter.Bodies.rectangle(220, 0, testBox.current.getBoundingClientRect().width, testBox.current.getBoundingClientRect().height),
+      body: Matter.Bodies.rectangle(0, 0, testBox.current.getBoundingClientRect().width, testBox.current.getBoundingClientRect().height),
       elem: boxRef2.current,
       render() {
         const { x, y } = this.body.position;
@@ -54,7 +55,7 @@ const Box = () => {
     const box3 = {
       w: testBox.current.getBoundingClientRect().width,
       h: testBox.current.getBoundingClientRect().height,
-      body: Matter.Bodies.rectangle(220, 0, testBox.current.getBoundingClientRect().width, testBox.current.getBoundingClientRect().height),
+      body: Matter.Bodies.rectangle(0, 0, testBox.current.getBoundingClientRect().width, testBox.current.getBoundingClientRect().height),
       elem: boxRef3.current,
       render() {
         const { x, y } = this.body.position;
@@ -67,7 +68,7 @@ const Box = () => {
     const polygon1 = {
       w: testPoly.current.getBoundingClientRect().width,
       h: testPoly.current.getBoundingClientRect().width,
-      body: Matter.Bodies.polygon(360, 0, 8, testPoly.current.getBoundingClientRect().width/2),
+      body: Matter.Bodies.polygon(70, 0, 8, testPoly.current.getBoundingClientRect().width/2),
       elem: polygonRef1.current,
       render() {
         const { x, y } = this.body.position;
@@ -79,7 +80,7 @@ const Box = () => {
     const polygon2 = {
       w: testPoly.current.getBoundingClientRect().width,
       h: testPoly.current.getBoundingClientRect().width,
-      body: Matter.Bodies.polygon(360, 0, 8, testPoly.current.getBoundingClientRect().width/2),
+      body: Matter.Bodies.polygon(70, 0, 8, testPoly.current.getBoundingClientRect().width/2),
       elem: polygonRef2.current,
       render() {
         const { x, y } = this.body.position;
@@ -91,7 +92,7 @@ const Box = () => {
     const polygon3 = {
       w: testPoly.current.getBoundingClientRect().width,
       h: testPoly.current.getBoundingClientRect().width,
-      body: Matter.Bodies.polygon(360, 0, 8, testPoly.current.getBoundingClientRect().width/2),
+      body: Matter.Bodies.polygon(50, 0, 8, testPoly.current.getBoundingClientRect().width/2),
       elem: polygonRef3.current,
       render() {
         const { x, y } = this.body.position;
@@ -103,7 +104,7 @@ const Box = () => {
     const polygon4 = {
       w: testPoly.current.getBoundingClientRect().width,
       h: testPoly.current.getBoundingClientRect().width,
-      body: Matter.Bodies.polygon(360, 0, 8, testPoly.current.getBoundingClientRect().width/2),
+      body: Matter.Bodies.polygon(60, 0, 8, testPoly.current.getBoundingClientRect().width/2),
       elem: polygonRef4.current,
       render() {
         const { x, y } = this.body.position;
@@ -115,7 +116,7 @@ const Box = () => {
     const circle1 = {
       w: testCircle.current.getBoundingClientRect().width,
       h: testCircle.current.getBoundingClientRect().width,
-      body: Matter.Bodies.circle(360, 0, testCircle.current.getBoundingClientRect().width/2),
+      body: Matter.Bodies.circle(20, 0, testCircle.current.getBoundingClientRect().width/2),
       elem: circleRef1.current,
       render() {
         const { x, y } = this.body.position;
@@ -127,7 +128,7 @@ const Box = () => {
     const circle2 = {
       w: testCircle.current.getBoundingClientRect().width,
       h: testCircle.current.getBoundingClientRect().width,
-      body: Matter.Bodies.circle(360, 0, testCircle.current.getBoundingClientRect().width/2),
+      body: Matter.Bodies.circle(20, 0, testCircle.current.getBoundingClientRect().width/2),
       elem: circleRef2.current,
       render() {
         const { x, y } = this.body.position;
@@ -139,7 +140,7 @@ const Box = () => {
     const circle3 = {
       w: testCircle.current.getBoundingClientRect().width,
       h: testCircle.current.getBoundingClientRect().width,
-      body: Matter.Bodies.circle(360, 0, testCircle.current.getBoundingClientRect().width/2),
+      body: Matter.Bodies.circle(20, 0, testCircle.current.getBoundingClientRect().width/2),
       elem: circleRef3.current,
       render() {
         const { x, y } = this.body.position;
@@ -157,10 +158,10 @@ const Box = () => {
     // });
 
     // Create walls
-    const leftWall = Matter.Bodies.rectangle(0, containerBounds.height / 2, 240, containerBounds.height + 480, { isStatic: true });
-    const rightWall = Matter.Bodies.rectangle(containerBounds.width, containerBounds.height / 2, 240, containerBounds.height + 480, { isStatic: true });
-    const topWall = Matter.Bodies.rectangle(containerBounds.width / 2, 0, containerBounds.width + 480, 240, { isStatic: true });
-    const bottomWall = Matter.Bodies.rectangle(containerBounds.width / 2, containerBounds.height, containerBounds.width, 240, { isStatic: true });
+    const leftWall = Matter.Bodies.rectangle(0, containerBounds.height / 2, testWall.current.getBoundingClientRect().width, containerBounds.height + testWall.current.getBoundingClientRect().width*2, { isStatic: true });
+    const rightWall = Matter.Bodies.rectangle(containerBounds.width, containerBounds.height / 2, testWall.current.getBoundingClientRect().width, containerBounds.height + 480, { isStatic: true });
+    const topWall = Matter.Bodies.rectangle(containerBounds.width / 2, 0, containerBounds.width + testWall.current.getBoundingClientRect().width*2, testWall.current.getBoundingClientRect().width, { isStatic: true });
+    const bottomWall = Matter.Bodies.rectangle(containerBounds.width / 2, containerBounds.height, containerBounds.width, testWall.current.getBoundingClientRect().width, { isStatic: true });
 
     // Adjust the bounds to restrict movement within the walls
     const mouseConstraint = Matter.MouseConstraint.create(engine, {
@@ -169,8 +170,8 @@ const Box = () => {
         render: { visible: false },
         // Set bounds to restrict movement within the area bounded by the walls
         bounds: {
-          min: { x: 120, y: 120 }, // Set min bounds to the top-left corner of the walls
-          max: { x: containerBounds.width - 120, y: containerBounds.height - 120 } // Set max bounds to the bottom-right corner of the walls
+          min: { x: testWall.current.getBoundingClientRect().width, y: testWall.current.getBoundingClientRect().width }, // Set min bounds to the top-left corner of the walls
+          max: { x: containerBounds.width - testWall.current.getBoundingClientRect().width, y: containerBounds.height - testWall.current.getBoundingClientRect().width } // Set max bounds to the bottom-right corner of the walls
         }
       }
     });
@@ -207,6 +208,7 @@ const Box = () => {
       <div id="test-circle" ref={testCircle}></div>
       <div id="test-box" ref={testBox}></div>
       <div id="test-poly" ref={testPoly}></div>
+      <div className="test-wall" ref={testWall}></div>
       <div id="box" ref={boxRef1}>
         <h1>HTML</h1>
       </div>

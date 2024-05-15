@@ -1212,26 +1212,26 @@ canvas {
   border-top: 1px solid white;
   z-index: 10;
   width: 100%;
-  height: 240px;
-  transform: translate(0%, calc(70vh - 120px));
+  height: clamp(7.5rem, 5.106rem + 12.766vw, 15rem);
+  transform: translate(0%, calc(70vh - clamp(3.75rem, 2.553rem + 6.383vw, 7.5rem)));
 }
 
 .left-wall {
   position: absolute;
   border-right: 1px solid white;
   z-index: 10;
-  width: 240px;
+  width: clamp(7.5rem, 5.106rem + 12.766vw, 15rem);
   height: 100%;
-  transform: translate(-120px, 0%);
+  transform: translate(calc(0px - clamp(3.75rem, 2.553rem + 6.383vw, 7.5rem)), 0%);
 }
 
 .right-wall {
   position: absolute;
   border-left: 1px solid white;
   z-index: 10;
-  width: 240px;
+  width: clamp(7.5rem, 5.106rem + 12.766vw, 15rem);
   height: 100%;
-  transform: translate(calc(90vw - 120px), 0%);
+  transform: translate(calc(90vw - clamp(3.75rem, 2.553rem + 6.383vw, 7.5rem)), 0%);
 }
 
 .top-wall {
@@ -1239,8 +1239,14 @@ canvas {
   border-bottom: 1px solid white;
   z-index: 10;
   width: 100%;
-  height: 240px;
-  transform: translate(0%, -120px);
+  height: clamp(7.5rem, 5.106rem + 12.766vw, 15rem);
+  transform: translate(0%, calc(0px - clamp(3.75rem, 2.553rem + 6.383vw, 7.5rem)));
+}
+
+.test-wall {
+  position: absolute;
+  z-index: -100;
+  width: clamp(7.5rem, 5.106rem + 12.766vw, 15rem);
 }
 
 .main-projects {
