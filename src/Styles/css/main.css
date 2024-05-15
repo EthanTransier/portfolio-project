@@ -601,7 +601,10 @@ main {
   background-color: #111111;
 }
 .timeline-container h1 {
-  font-size: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(5rem, 0rem + 26.667vw, 7.5rem);
   font-weight: 700;
   color: #1b998b;
   cursor: pointer;
@@ -641,17 +644,17 @@ main {
 }
 .timeline-container .timeline-info-container .timeline-left {
   margin-top: 1rem;
-  line-height: 30px;
+  line-height: clamp(1.125rem, 0.482rem + 3.429vw, 1.875rem);
 }
 .timeline-container .timeline-info-container .timeline-left h3 {
-  margin-left: 1.5rem;
-  font-size: 16px;
+  margin-left: clamp(0.5rem, -0.357rem + 4.571vw, 1.5rem);
+  font-size: clamp(0.688rem, 0.42rem + 1.429vw, 1rem);
   font-weight: 700;
   letter-spacing: 6px;
 }
 .timeline-container .timeline-info-container .timeline-left p {
-  margin-left: 3rem;
-  font-size: 14px;
+  margin-left: clamp(0.5rem, -1.643rem + 11.429vw, 3rem);
+  font-size: clamp(0.625rem, 0.411rem + 1.143vw, 0.875rem);
   font-weight: 300;
   letter-spacing: 3px;
   cursor: pointer;
@@ -669,22 +672,22 @@ main {
   margin-top: 1rem;
 }
 .timeline-container .timeline-info-container .timeline-right h2 {
-  margin-right: 1.5rem;
-  font-size: 16px;
+  margin-right: clamp(0.5rem, -0.357rem + 4.571vw, 1.5rem);
+  font-size: clamp(0.75rem, 0.536rem + 1.143vw, 1rem);
   font-weight: 700;
   letter-spacing: 6px;
 }
 .timeline-container .timeline-info-container .timeline-right .timeline-text-container {
   width: 100%;
-  padding-right: 3rem;
+  padding-right: clamp(0.5rem, -1.643rem + 11.429vw, 3rem);
   height: 100%;
   transform: translateY(0%);
 }
 .timeline-container .timeline-info-container .timeline-right .timeline-text-container div {
-  font-size: 12px;
+  font-size: clamp(0.563rem, 0.402rem + 0.857vw, 0.75rem);
   font-weight: 300;
   letter-spacing: 2px;
-  line-height: 25px;
+  line-height: clamp(0.813rem, 0.17rem + 3.429vw, 1.563rem);
   height: 100%;
   padding-top: 0.5rem;
   width: 100%;
@@ -692,14 +695,6 @@ main {
 @media (max-width: 1100px) {
   .timeline-container .timeline-info-container {
     width: 90%;
-  }
-}
-@media (max-width: 600px) {
-  .timeline-container .timeline-info-container {
-    flex-direction: column;
-  }
-  .timeline-container .timeline-info-container div {
-    width: 100%;
   }
 }
 
