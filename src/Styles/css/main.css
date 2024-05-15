@@ -689,6 +689,19 @@ main {
   padding-top: 0.5rem;
   width: 100%;
 }
+@media (max-width: 1100px) {
+  .timeline-container .timeline-info-container {
+    width: 90%;
+  }
+}
+@media (max-width: 600px) {
+  .timeline-container .timeline-info-container {
+    flex-direction: column;
+  }
+  .timeline-container .timeline-info-container div {
+    width: 100%;
+  }
+}
 
 .word-scroller {
   width: 100vw;

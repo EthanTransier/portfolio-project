@@ -1,7 +1,6 @@
 import {useState, useRef, useEffect} from 'react'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-// import TextScramble from '../Components/TextScrambler'
 
 const Timeline = () => {
     // const phrases = [
@@ -37,13 +36,13 @@ const Timeline = () => {
     // Array for holding the titles
     const firstTitles = [firstInfo1, firstInfo2, firstInfo3, firstInfo4, firstInfo5, firstInfo6]
 
-    function open(item){
+    function open(item, width){
         
         if(item == 'first'){
             if(!firstState){
             gsap.timeline()
             .to(`#${item}`, {
-                width: '60%',
+                width: width,
                 ease: "circ.inOut",
                 duration: 0.15
             })
@@ -84,7 +83,7 @@ const Timeline = () => {
             if(!secondState){
                 gsap.timeline()
                 .to(`#${item}`, {
-                    width: '60%',
+                    width: width,
                     ease: "circ.inOut",
                     duration: 0.15
                 })
@@ -125,7 +124,7 @@ const Timeline = () => {
             if(!thirdState){
                 gsap.timeline()
                 .to(`#${item}`, {
-                    width: '60%',
+                    width: width,
                     ease: "circ.inOut",
                     duration: 0.15
                 })
@@ -164,10 +163,10 @@ const Timeline = () => {
             setThirdState(!thirdState)
         }
     }
-    function enter(item){
+    function enter(item, width){
         gsap.timeline()
         .to(`#${item}`, {
-            width: '60%',
+            width: width,
             ease: "power1.inOut",
             duration: 0.25
         })
@@ -183,8 +182,6 @@ const Timeline = () => {
         }
         
     }
-    // The different text for 2022
-    const firstInfo = ['test 1', 'test 2', 'test 3', 'test 4', 'test 5', 'test 6'];
 
     function openFirstInfo(item){
         for(let i = 0; i < firstTitles.length; i++){
@@ -204,7 +201,7 @@ const Timeline = () => {
 
   return (
     <div className='timeline-container'>
-        <h1 onClick={() => open('first', infoContainerFirst)} onMouseEnter={() => enter('first')} onMouseLeave={() => leave('first')}>20<span>22</span></h1>
+        <h1 onClick={() => open('first', window.innerWidth > 1100 ? '60%' : '90%')} onMouseEnter={() => enter('first', window.innerWidth > 1100 ? '60%' : '90%')} onMouseLeave={() => leave('first')}>20<span>22</span></h1>
         <div className='white-bottom' id='first'></div>
         <section className='timeline-info-container' ref={infoContainerFirst} id='first-info'>
             <div className="timeline-left">
@@ -221,16 +218,16 @@ const Timeline = () => {
             <div className="timeline-right">
                 <h2 ref={firstTextTitle}>OFFICER WORK CONT</h2>
                 <div ref={firstText} className='timeline-text-container' id='first-text-container'>
-                        <div>During my second semester at West-MEC as an FBLA Officer, I worked closely with my team to plan events like FBLA Regionals and State, emphasizing teamwork and communication. I also played a key role in organizing fundraisers to support our coding program, engaging with the community to ensure success. My dedication to fostering unity within our chapter was vital for our collective achievements and the growth of our coding initiatives.</div>
-                        <div>This semester at West-MEC, I completed a Unity game project and began work on an EMR Web Application for the Medical Assisting programs. While honing my skills in React and Next.js, I delved into both frontend and backend web development, showcasing my commitment to continuous learning and practical application.</div>
-                        <div>At FBLA State, I competed in the Web Design Competition and secured 6th place in the state, earning a spot for Nationals. My project was a Gala Website designed for a local adoption center aimed at fundraising. Crafting a visually appealing and user-friendly platform, I showcased my skills in web design and digital creativity. This achievement highlights my ability to combine technical proficiency with creative flair.</div>
-                        <div>At FBLA State, I competed in the Graphic Design competition, where my peers and I simulated a marketing firm, crafting a branding package for a local bakery. Our collaborative effort yielded a visually captivating brand identity, showcasing our graphic design talents. This experience highlighted our ability to translate creative vision into effective design elements, earning recognition and validation for our innovative approach.</div>
-                        <div>Volunteering for 10 hours at Feed My Starving Children was eye-opening. Witnessing the collective effort to pack meals for malnourished children globally left a lasting impact. It reinforced my dedication to service and ignited a sense of empathy and compassion within me, motivating me to continue contributing to positive change in the world.</div>
-                        <div>volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in </div>
+                        <div>During my second semester at West-MEC as an FBLA Officer, I worked closely with my team to plan events like FBLA Regionals and State, emphasizing teamwork and communication. I also played a key role in organizing fundraisers to support our coding program.</div>
+                        <div>This semester at West-MEC, I completed a Unity game project and began work on an EMR Web Application for the Medical Assisting programs. While honing my skills in React and Next.js, I delved into both frontend and backend web development.</div>
+                        <div>At FBLA State, I competed in the Web Design Competition and secured 6th place in the state, earning a spot for Nationals. My project was a Gala Website designed for a local adoption center aimed at fundraising.</div>
+                        <div>At FBLA State, I competed in the Graphic Design competition, where my peers and I simulated a marketing firm, crafting a branding package for a local bakery. Our collaborative effort yielded a visually captivating brand identity, showcasing our graphic design talents. </div>
+                        <div>Volunteering for 10 hours at Feed My Starving Children was eye-opening. Witnessing the collective effort to pack meals for malnourished children globally left a lasting impact. It reinforced my dedication to service, motivating me to continue contributing.</div>
+                        <div>During my 6-week internship, I had the opportunity to complete a professional portfolio for Sydney Curtis. This experience was invaluable as it allowed me to apply my skills and knowledge in a real-world setting.</div>
                 </div>
             </div>
         </section>
-        <h1 onClick={() => open('second', infoContainerSecond)} onMouseEnter={() => enter('second')} onMouseLeave={() => leave('second')}>20<span>23</span></h1>
+        <h1 onClick={() => open('second', window.innerWidth > 1100 ? '60%' : '90%')} onMouseEnter={() => enter('second', window.innerWidth > 1100 ? '60%' : '90%')} onMouseLeave={() => leave('second')}>20<span>23</span></h1>
         <div className='white-bottom' id='second'></div>
         <section className='timeline-info-container' ref={infoContainerSecond} id='second-info'>
             <div className="timeline-left">
@@ -251,7 +248,7 @@ const Timeline = () => {
                 
             </div>
         </section>
-        <h1 id='third-title' onClick={() => open('third', infoContainerThird)} onMouseEnter={() => enter('third')} onMouseLeave={() => leave('third')}>20<span>24</span></h1>
+        <h1 id='third-title' onClick={() => open('third', window.innerWidth > 1100 ? '60%' : '90%')} onMouseEnter={() => enter('third', window.innerWidth > 1100 ? '60%' : '90%')} onMouseLeave={() => leave('third')}>20<span>24</span></h1>
         <div className='white-bottom' id='third'></div>
         <section className='timeline-info-container' ref={infoContainerThird} id='third-info'>
             <div className="timeline-left">

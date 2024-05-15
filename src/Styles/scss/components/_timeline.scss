@@ -41,6 +41,7 @@
 	}
 	.timeline-info-container {
 		width: 60%;
+
 		display: flex;
 		background-color: #111111;
 		overflow-y: hidden;
@@ -101,6 +102,15 @@
 					padding-top: 0.5rem;
 					width: 100%;
 				}
+			}
+		}
+		@media (max-width: 1100px) {
+			width: 90%;
+		}
+		@media (max-width: 600px) {
+			flex-direction: column;
+			div {
+				width: 100%;
 			}
 		}
 	}
