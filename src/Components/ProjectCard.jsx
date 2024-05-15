@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-const ProjectCard = ({num, title, date, link, url}) => {
+const ProjectCard = ({num, title, date, link, url, link2}) => {
   if(title != ""){
     return (
       <div className='project-card' id={`card-${num}`} style={{backgroundImage: `url(${url})`}}>
@@ -10,7 +10,14 @@ const ProjectCard = ({num, title, date, link, url}) => {
             <h1 className='title'>{title}</h1>
             <h4 className='date'>{date}</h4>
           </div>
-          <Image src={'/images/github.svg'} width={7} height={7} alt='github'></Image>
+          {
+            link == "" && link2 == "" ?
+            <></>
+            :
+            <a href={link != "" ? `https://github/com/EthanTransier${link}` : link2}>
+              <Image src={link != "" ? '/images/github.svg' : "/images/leave.svg"} width={7} height={7} alt='github'></Image>
+            </a>
+          }
         </div>
       </div>
     )
