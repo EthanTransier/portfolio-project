@@ -180,7 +180,7 @@ input[type=button] {
 main {
   min-height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: #111111;
   color: white;
 }
@@ -795,82 +795,67 @@ main {
   gap: 15vh;
 }
 .featured-projects .featured-image {
-  transform: translateX(40vw);
-  width: 70vw;
+  transform: translateX(70%);
+  width: clamp(25rem, 9.286rem + 78.571vw, 80rem);
 }
 .featured-projects .projects-image {
-  transform: translateX(-40vw);
-  width: 70vw;
+  transform: translateX(-70%);
+  width: clamp(25rem, 9.286rem + 78.571vw, 80rem);
 }
 
 .feat-project-slider {
-  margin-top: 15rem;
-  margin-bottom: 15rem;
-  width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100vw;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
-.feat-project-slider .feat-project-card {
+
+.feat-project-card {
+  width: 20rem;
+  height: 30rem;
+  background-color: white;
+  border-radius: 4rem;
+  background-position: center;
+  background-size: cover;
+}
+.feat-project-card .cover {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.615);
+  border-radius: 4rem;
+}
+.feat-project-card .cover .title-container {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+}
+.feat-project-card .cover .title-container .title {
   color: white;
-  width: 20vw;
-  aspect-ratio: 9/13;
-  border-radius: 2.5rem;
-  perspective: 1000px;
+  font-size: 2rem;
+  margin-left: 1.25rem;
+  padding-bottom: 1.25rem;
+  letter-spacing: 0.2rem;
 }
-.feat-project-slider .feat-project-card:hover .inner {
-  transform: rotateX(180deg);
-}
-.feat-project-slider .feat-project-card .inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transition: 0.5s ease-in-out;
-  transform-style: preserve-3d;
-  background-position: center;
-  background-size: cover;
-  border-radius: 2.5rem;
-}
-.feat-project-slider .feat-project-card .inner div {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 2.5rem;
-  background-position: 45% 50%;
-  background-size: cover;
-}
-.feat-project-slider .feat-project-card .inner .back {
-  transform: rotateX(180deg);
-  background-position: center;
-  background-size: cover;
-}
-.feat-project-slider .feat-project-card .inner .back .content {
-  background-position: center;
-  background-size: cover;
-  background-color: rgba(0, 0, 0, 0.766);
-  width: 100%;
-  height: 100%;
-}
-.feat-project-slider .feat-project-card .inner .back h1 {
-  color: white;
-  padding-left: 10%;
-  padding-top: 4%;
-  font-size: 1.6rem;
-  letter-spacing: 5px;
-}
-.feat-project-slider .feat-project-card .inner .back h3 {
-  padding-left: 10%;
-  padding-top: 3%;
+.feat-project-card .cover .title-container .date {
   color: #1b998b;
+  font-size: 1.1rem;
+  margin-left: 1rem;
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.3rem;
   font-weight: 600;
-  font-size: 1.05rem;
 }
-.feat-project-slider .feat-project-card .inner .back a {
-  position: absolute;
-  bottom: 0;
-  transform: translate(1.5rem, -1rem);
+.feat-project-card .cover img {
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+  width: 2.5rem;
 }
 
 .contact-main h1 {

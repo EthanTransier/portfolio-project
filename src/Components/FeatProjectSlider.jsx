@@ -4,7 +4,9 @@ import FeatProjectCard from './FeatProjectCard'
 const FeatProjectSlider = () => {
   return (
     <div className='feat-project-slider'>
-        <FeatProjectCard name={'GAME PROJECT'} time={'February 2024 - March 2024'} url1={"/images/game.png"} url2={'/images/game-project.png'} link={'test link'}></FeatProjectCard>
+        <FeatProjectCard num={3} title="WEB PORTFOLIO" url="/images/web-portfolio.png" link="portfolio-project"></FeatProjectCard>
+        <FeatProjectCard title="GAME PROJECT" url="/images/game.png" link="unity-project"></FeatProjectCard>
+        <FeatProjectCard title="QUIKTEK COMPUTER PROJECTS" url="/images/quiktek.png" link="" link2="http://www.quiktekcomputer.com/index.html"></FeatProjectCard>
     </div>
   )
 }

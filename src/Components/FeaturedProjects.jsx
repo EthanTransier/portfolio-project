@@ -11,7 +11,7 @@ const FeaturedProjects = () => {
                 trigger: ".featured-image",
                 start: "top 60%", // Starts when the top of the trigger hits the center of the viewport
             },
-            x: '20vw',
+            x: '15%',
             ease: "back.inOut(1.7)",
             duration: 1
         });
@@ -20,7 +20,7 @@ const FeaturedProjects = () => {
                 trigger: ".featured-image",
                 start: "top 60%", // Starts when the top of the trigger hits the center of the viewport
             },
-            x: '-20vw',
+            x: '-15%',
             ease: "back.inOut(1.7)",
             duration: 1
         });
