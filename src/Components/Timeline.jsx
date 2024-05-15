@@ -298,7 +298,7 @@ const Timeline = () => {
                         <div>In my inaugural website design competition, my team and I secured the 9th position in the state, marking a promising start to our journey. This achievement fueled my passion for web development and inspired me to strive for even greater success in future competitions.</div>
                         <div>As the Year 2 class representative, I initiated my officer role in the first semester of my second year at West-MEC. Meeting with the team, I fostered a sense of camaraderie and purpose, facilitating planning sessions and strategizing initiatives to enhance our class experience.</div>
                         <div>During that semester, I spearheaded various projects, including the GameBox platform and refining the QuickTek computer site, elevating my skills in web development. Simultaneously, I delved into learning Node.js and React, expanding my knowledge in web development.</div>
-                        <div>Engaging in online volunteer work for Glendale Public Library, I contributed to digital initiatives, fostering community engagement. Through my efforts, I aimed to enrich the library's online presence and support its mission of serving the local community.</div>
+                        <div>{`Engaging in online volunteer work for Glendale Public Library, I contributed to digital initiatives, fostering community engagement. Through my efforts, I aimed to enrich the library's online presence and support its mission of serving the local community.`}</div>
                 </div>
             </div>
         </section>
