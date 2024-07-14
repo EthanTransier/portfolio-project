@@ -31,6 +31,7 @@ summary {
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -1284,125 +1285,258 @@ canvas {
   width: 100vw;
   overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.main-projects #projects-circle {
-  width: 180rem;
-  height: 180rem;
-  aspect-ratio: 1/1;
-  border-radius: 90rem;
-  transform: translateY(150vh);
-  z-index: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.main-projects #projects-circle .project-card {
-  width: 20rem;
-  height: 30rem;
-  background-color: white;
-  transform: translateY(-150vh);
-  position: absolute;
-  border-radius: 4rem;
-  background-position: center;
-  background-size: cover;
-}
-.main-projects #projects-circle .project-card .cover {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
   align-items: flex-end;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.615);
-  border-radius: 4rem;
+  justify-content: flex-start;
 }
-.main-projects #projects-circle .project-card .cover .title-container {
+.main-projects .project-card {
+  width: 100vw;
+  height: 73vh;
   display: flex;
-  flex-direction: column-reverse;
-  width: 100%;
+  gap: 4px;
+  background-color: #111111;
+  border: 4px solid #111111;
 }
-.main-projects #projects-circle .project-card .cover .title-container .title {
-  color: white;
-  font-size: 2rem;
-  margin-left: 1.25rem;
-  padding-bottom: 1.25rem;
-  letter-spacing: 0.2rem;
+.main-projects .project-card .col {
+  flex: 1;
+  background-color: #111111;
 }
-.main-projects #projects-circle .project-card .cover .title-container .date {
-  color: #1b998b;
-  font-size: 1.1rem;
-  margin-left: 1rem;
-  padding-bottom: 0.5rem;
-  letter-spacing: 0.3rem;
-  font-weight: 600;
+.main-projects .project-card .col-1 {
+  gap: 4px;
+  background-color: #111111;
+  display: flex;
+  flex-direction: column;
 }
-.main-projects #projects-circle .project-card .cover img {
-  margin-right: 1.5rem;
-  margin-top: 1.5rem;
-  width: 2.5rem;
-}
-.main-projects #projects-circle .project-not-found {
+.main-projects .project-card .col-1 .title-container {
+  background-color: #0c0c0c;
+  min-height: 13%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+}
+.main-projects .project-card .col-1 .title-container h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 8px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
+}
+.main-projects .project-card .col-1 .info-container {
+  flex: 1;
+  background-color: #0c0c0c;
+}
+.main-projects .project-card .col-2 {
+  gap: 4px;
+  background-color: #111111;
+  display: flex;
   flex-direction: column;
-  color: white;
-  font-size: 1.3rem;
-  text-align: center;
-  background-color: #060606;
+}
+.main-projects .project-card .col-2 .image-container {
+  height: 100%;
+  background-color: #0c0c0c;
   overflow: hidden;
 }
-.main-projects #projects-circle .project-not-found .add-project {
-  cursor: pointer;
-  height: calc(100% - 2.5rem);
-  width: calc(100% - 2.5rem);
-  border: 1px solid white;
-  border-radius: 2rem;
+.main-projects .project-card .col-2 .image-container .image {
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.main-projects .project-card .col-2 .image-container .image .image-effect-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateY(-100%);
+}
+.main-projects .project-card .col-2 .image-container .image .image-effect-container .image-effect {
+  opacity: 0.3;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
   position: absolute;
+}
+.main-projects .project-card .col-2 .image-container .image .image-effect-container .img-eff-1 {
+  animation-name: image-effect-1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 7.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+.main-projects .project-card .col-2 .image-container .image .image-effect-container .img-eff-2 {
+  animation-name: image-effect-2;
+  animation-timing-function: ease-in-out;
+  animation-duration: 7.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+.main-projects .project-card .col-2 .image-container .image .filter {
+  backdrop-filter: hue-rotate(40deg) grayscale(20%);
+  width: 100%;
+  height: 100%;
+  background-position: 0% 0%;
+  animation-name: moving-lines;
+  animation-timing-function: linear;
+  animation-duration: 5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+  background: repeating-linear-gradient(45deg, rgba(27, 153, 138, 0.3), rgba(27, 153, 138, 0.3) 4px, transparent 4px, transparent 9px);
+  background-size: 100% 200%;
+}
+.main-projects .project-card .col-3 {
   display: flex;
   flex-direction: column;
+  gap: 4px;
+  background-color: #111111;
+}
+.main-projects .project-card .col-3 div {
+  flex: 1;
+  background-color: #0c0c0c;
+}
+
+@keyframes moving-lines {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes image-effect-1 {
+  0% {
+    filter: hue-rotate(45deg);
+    transform: translateX(0%);
+  }
+  50% {
+    filter: hue-rotate(90deg);
+    transform: translateX(-1.5%);
+  }
+  100% {
+    filter: hue-rotate(45deg);
+    transform: translateX(0%);
+  }
+}
+@keyframes image-effect-2 {
+  0% {
+    filter: hue-rotate(45deg);
+    transform: translateX(0%);
+  }
+  50% {
+    filter: hue-rotate(-90deg);
+    transform: translateX(1.5%);
+  }
+  100% {
+    filter: hue-rotate(45deg);
+    transform: translateX(0%);
+  }
+}
+.aboutOpener {
+  font-weight: normal;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1rem;
+  justify-content: flex-start;
 }
-.main-projects #projects-circle .project-not-found .add-project .notfound {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 5rem;
-  letter-spacing: 0.6rem;
+.aboutOpener .aboutTitleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 100%;
+  z-index: 1;
 }
-.main-projects #projects-circle #card-2 {
-  transform: rotate(30deg) translateY(-150vh);
+.aboutOpener .aboutTitleContainer h1 {
+  font-size: 300px;
+  transform: translateX(-1.5%);
+  letter-spacing: 4rem;
+  line-height: 300px;
 }
-.main-projects #projects-circle #card-3 {
-  transform: rotate(-30deg) translateY(-150vh);
+.aboutOpener .aboutTitleContainer h5 {
+  mix-blend-mode: difference;
+  pointer-events: none;
+  mask: url(#circle-mask);
+  -webkit-mask: url(#circle-mask);
 }
-.main-projects #projects-circle #card-4 {
-  transform: rotate(60deg) translateY(-150vh);
+.aboutOpener .aboutTitleContainer .titleLinksContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
-.main-projects #projects-circle #card-5 {
-  transform: rotate(-60deg) translateY(-150vh);
+.aboutOpener .aboutTitleContainer .titleLinksContainer .skillsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 250px;
+  transform: translateX(-25%);
+  border-right: 1px solid white;
 }
-.main-projects #projects-circle #card-6 {
-  transform: rotate(90deg) translateY(-150vh);
+.aboutOpener .aboutTitleContainer .titleLinksContainer .skillsContainer a {
+  transform: translateX(-1.5rem);
+  color: white;
+  text-decoration: none;
+  transition: 0.1s ease-in-out;
+  font-size: 1.15rem;
+  font-weight: 200;
+  letter-spacing: 7px;
 }
-.main-projects #projects-circle #card-7 {
-  transform: rotate(-90deg) translateY(-150vh);
+.aboutOpener .aboutTitleContainer .titleLinksContainer .skillsContainer a:hover {
+  color: #ff5a43;
 }
-.main-projects #projects-circle #card-8 {
-  transform: rotate(120deg) translateY(-150vh);
+.aboutOpener .following {
+  position: absolute;
+  filter: url("#goo");
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
 }
-.main-projects #projects-circle #card-9 {
-  transform: rotate(-120deg) translateY(-150vh);
+.aboutOpener .follow {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #1b998b;
 }
-.main-projects #projects-circle #card-10 {
-  transform: rotate(150deg) translateY(-150vh);
+.aboutOpener .test {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  width: 0px;
+  aspect-ratio: 1/1;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background-color: #1b998b;
 }
-.main-projects #projects-circle #card-11 {
-  transform: rotate(-150deg) translateY(-150vh);
+
+.cursorFollower {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #1b998b;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s;
+  mix-blend-mode: difference;
+  z-index: 999;
+  pointer-events: none;
 }
-.main-projects #projects-circle #card-12 {
-  transform: rotate(180deg) translateY(-150vh);
+
+.cursorFollowerDot {
+  position: fixed;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s;
+  mix-blend-mode: difference;
+  z-index: 999;
+  pointer-events: none;
 }/*# sourceMappingURL=main.css.map */

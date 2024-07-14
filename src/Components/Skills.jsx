@@ -246,7 +246,7 @@ const Box = () => {
 
 const Skills = () => {
   return (
-    <div className="container">
+    <div className="container" id='skills'>
       <Box/>
       <div className="left-wall"></div>
       <div className="right-wall"></div>

@@ -1,0 +1,112 @@
+.aboutOpener {
+	font-weight: normal;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	.aboutTitleContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 5rem;
+		width: 100%;
+		z-index: 1;
+		h1 {
+			font-size: 300px;
+			transform: translateX(-1.5%);
+			letter-spacing: 4rem;
+			line-height: 300px;
+		}
+		h5 {
+			mix-blend-mode: difference; // This blend mode can be adjusted for effect
+			pointer-events: none;
+			mask: url(#circle-mask);
+			-webkit-mask: url(#circle-mask);
+		}
+		.titleLinksContainer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			.skillsContainer {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+				justify-content: space-around;
+				height: 250px;
+				transform: translateX(-25%);
+				border-right: 1px solid white;
+				a {
+					transform: translateX(-1.5rem);
+					color: white;
+					text-decoration: none;
+					transition: 0.1s ease-in-out;
+					font-size: 1.15rem;
+					font-weight: 200;
+					letter-spacing: 7px;
+					&:hover {
+						color: #ff5a43;
+					}
+				}
+			}
+		}
+	}
+	.following {
+		position: absolute;
+		filter: url('#goo');
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		pointer-events: none;
+		z-index: 0;
+	}
+	.follow {
+		position: absolute;
+		// filter: blur(150px);
+		z-index: 0;
+		pointer-events: none;
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
+		background-color: #1b998b;
+	}
+	.test {
+		position: absolute;
+		// filter: blur(50px);
+		z-index: 0;
+		pointer-events: none;
+		width: 0px;
+		aspect-ratio: 1/1;
+		left: 0;
+		top: 0;
+		border-radius: 50%;
+		background-color: #1b998b;
+	}
+}
+.cursorFollower {
+	position: fixed;
+	width: 200px;
+	height: 200px;
+	// border: 2px solid white;
+	border-radius: 50%;
+	background-color: #1b998b;
+	transform: translate(-50%, -50%);
+	transition: transform 0.3s;
+	mix-blend-mode: difference;
+	z-index: 999;
+	pointer-events: none;
+	// filter: blur(8px);
+}
+.cursorFollowerDot {
+	position: fixed;
+	width: 0.8rem;
+	height: 0.8rem;
+	background: white;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	transition: transform 0.3s;
+	mix-blend-mode: difference;
+	z-index: 999;
+	pointer-events: none;
+}

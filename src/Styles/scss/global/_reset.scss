@@ -1,18 +1,18 @@
 *,
 *::after,
 *::before {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font-weight: normal;
-  vertical-align: baseline;
-  background: transparent;
-  ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+	ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
 }
 *::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+	display: none; /* Safari and Chrome */
 }
 
 main,
@@ -25,18 +25,19 @@ nav,
 section,
 details,
 summary {
-  display: block;
+	display: block;
 }
 
 //handle box-sizing on a inhereted level
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 *,
 *::after,
 *::before {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 //this helps with img scaling, you might have an
@@ -45,24 +46,24 @@ html {
 img,
 object,
 embed {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 //add smoth scrolling to your pages
 
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 blockquote,
 q {
-  quotes: none;
-  &::before,
-  &::after {
-    content: '';
-    content: none;
-  }
+	quotes: none;
+	&::before,
+	&::after {
+		content: '';
+		content: none;
+	}
 }
 
 // blockquote::before,
@@ -72,89 +73,89 @@ q {
 // }
 
 del {
-  text-decoration: line-through;
+	text-decoration: line-through;
 }
 
 abbr[title],
 dfn[title] {
-  border-bottom: 1px dotted #222;
-  cursor: help;
+	border-bottom: 1px dotted #222;
+	cursor: help;
 }
 
 //table settings
 table {
-  border-collapse: separate;
-  border-spacing: 0;
+	border-collapse: separate;
+	border-spacing: 0;
 }
 th {
-  font-weight: bold;
-  vertical-align: bottom; //center is also common
+	font-weight: bold;
+	vertical-align: bottom; //center is also common
 }
 td {
-  font-weight: normal;
-  vertical-align: top;
+	font-weight: normal;
+	vertical-align: top;
 }
 hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
 }
 
 input,
 select {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 pre {
-  white-space: pre; //CSS2
-  white-space: pre-wrap; //CSS2.1
-  white-space: pre-line; //CSS3
-  word-wrap: break-word; // IE
+	white-space: pre; //CSS2
+	white-space: pre-wrap; //CSS2.1
+	white-space: pre-line; //CSS3
+	word-wrap: break-word; // IE
 }
 
 input[type='radio'] {
-  vertical-align: text-bottom;
+	vertical-align: text-bottom;
 }
 input[type='checkbox'] {
-  vertical-align: bottom;
+	vertical-align: bottom;
 }
 .ie7 input[type='checkbox'] {
-  vertical-align: baseline;
+	vertical-align: baseline;
 }
 .ie6 input {
-  vertical-align: text-bottom;
+	vertical-align: text-bottom;
 }
 
 select,
 input,
 textarea {
-  font-size: 99%;
+	font-size: 99%;
 }
 
 small {
-  font-size: 85%;
+	font-size: 85%;
 }
 
 strong {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 //super and sub text
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
 }
 
 sup {
-  top: -0.5em;
+	top: -0.5em;
 }
 sub {
-  bottom: -0.25em;
+	bottom: -0.25em;
 }
 
 .clickable,
@@ -163,24 +164,24 @@ input[type='button'],
 input[type='submit'],
 input[type='file'],
 button {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 //fix buttons for IE7
 button,
 input[type='button'] {
-  width: auto;
-  overflow: hidden;
+	width: auto;
+	overflow: hidden;
 }
 
 //fix scalable imgs for IE7
 .ie7 img {
-  -ms-interpolation-mode: bicubic;
+	-ms-interpolation-mode: bicubic;
 }
 
 //fixing container collapse
 .clearfix::after {
-  content: ' ';
-  display: block;
-  clear: both;
+	content: ' ';
+	display: block;
+	clear: both;
 }
