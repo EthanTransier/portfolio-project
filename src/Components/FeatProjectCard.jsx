@@ -14,7 +14,7 @@ const ProjectCard = ({num, title, date, link, url, link2}) => {
             link == "" && link2 == "" ?
             <></>
             :
-            <a href={link != "" ? `https://github/com/EthanTransier${link}` : link2}>
+            <a href={link != "" ? `https://github.com/EthanTransier/${link}` : link2}>
               <Image src={link != "" ? '/images/github.svg' : "/images/leave.svg"} width={7} height={7} alt='github'></Image>
             </a>
           }

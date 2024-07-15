@@ -1000,19 +1000,21 @@ footer .footer-content .links .red-dot {
   aspect-ratio: 1/1;
   border-radius: 0.15rem;
 }
-footer .footer-content .links h5 {
+footer .footer-content .links a {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   line-height: 1.5rem;
   cursor: pointer;
+  color: white;
+  text-decoration: none;
 }
-footer .footer-content .links h5 p {
+footer .footer-content .links a p {
   font-weight: 500;
   transition: 0.1s ease-in-out;
 }
-footer .footer-content .links h5:hover p {
+footer .footer-content .links a:hover p {
   font-weight: 600;
   color: #ff5a43;
 }

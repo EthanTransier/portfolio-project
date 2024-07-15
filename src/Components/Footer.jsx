@@ -7,22 +7,22 @@ const Footer = () => {
     <footer>
         <section className="footer-content">
             <section className="links">
-                <h5>
+                <Link href="/">
                     <p>H</p>
                     <p>O</p>
                     <p>M</p>
                     <p>E</p>
-                </h5>
+                </Link>
                 <div className="red-dot"></div>
-                <h5>
+                <Link href="/about">
                     <p>A</p>
                     <p>B</p>
                     <p>O</p>
                     <p>U</p>
                     <p>T</p>
-                </h5>
+                </Link>
                 <div className="red-dot"></div>
-                <h5>
+                <Link href="/projects">
                     <p>P</p>
                     <p>R</p>
                     <p>O</p>
@@ -31,9 +31,9 @@ const Footer = () => {
                     <p>C</p>
                     <p>T</p>
                     <p>S</p>
-                </h5>
+                </Link>
                 <div className="red-dot"></div>
-                <h5>
+                <Link href="/contact">
                     <p>C</p>
                     <p>O</p>
                     <p>N</p>
@@ -41,7 +41,7 @@ const Footer = () => {
                     <p>A</p>
                     <p>C</p>
                     <p>T</p>
-                </h5>
+                </Link>
             </section>
             <section className="name">
                 <div className="green-dot"></div>
@@ -65,9 +65,9 @@ const Footer = () => {
                  <div className="green-dot"></div>
             </section>
             <section className="socials">
-                <Image src={'/images/instagram.svg'} alt="instagram" height="48" width="48"></Image>
-                <Image src={'/images/github.svg'} alt="github" height="48" width="48"></Image>
-                <Image src={'/images/linkedin.svg'} alt="linkedin" height="48" width="48"></Image>
+                <a href='https://www.instagram.com/ethan_transier?igsh=M3R6bjJ4ZmhxMWxy&utm_source=qr'><Image src={'/images/instagram.svg'} alt="instagram" height="48" width="48"></Image></a>
+                <a href="https://www.github.com/EthanTransier"><Image src={'/images/github.svg'} alt="github" height="48" width="48"></Image></a>
+                <a href="https://www.linkedin.com/in/ethan-transier-651a432a4"><Image src={'/images/linkedin.svg'} alt="linkedin" height="48" width="48"></Image></a>
             </section>
         </section>
         <section className="mobile-footer">
