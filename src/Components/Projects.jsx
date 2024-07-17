@@ -12,6 +12,7 @@ const Projects = () => {
   const DRAG_BUFFER = 150
   const dragX = useMotionValue(0)
   const cardsLength = 4
+  const [width, setWidth] = useState(1800);
 
   const increasePosition = () => {
     if(positionIndex < cardsLength){
@@ -34,15 +35,31 @@ const Projects = () => {
 
     const x = dragX.get();
 
-    if(x <= -DRAG_BUFFER && positionIndex < cardsLength) {
+    if(x <= -(width / 12) && positionIndex < cardsLength) {
       setPositionIndex((pv) => pv + 1)
-    }else if(x >= DRAG_BUFFER && positionIndex > 0){
+    }else if(x >= (width / 12) && positionIndex > 0){
       setPositionIndex((pv) => pv - 1)
     }
   }
   const handleClick = (num) => {
     setPositionIndex(num)
   }
+
+  useEffect(() => {
+     // Check if window is defined
+    if (typeof window !== 'undefined') {
+        const handleResize = () => setWidth(window.innerWidth);
+
+        // Set initial width
+        setWidth(window.innerWidth);
+
+        // Add event listener
+        window.addEventListener('resize', handleResize);
+        
+        // Clean up event listener on component unmount
+        return () => window.removeEventListener('resize', handleResize);
+    }
+    }, []);
 
   return (
     <section className="projects">
