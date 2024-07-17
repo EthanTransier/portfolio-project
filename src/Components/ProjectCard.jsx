@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-const ProjectCard = ({num, title, date, link, url, link2, info, type}) => {
+const ProjectCard = ({num, title, date, link, url, link2, info, type, increasePosition, decreasePosition, tags}) => {
   // if(title != ""){
   //   return (
   //     <div className='project-card' id={`card-${num}`}>
@@ -30,39 +30,62 @@ const ProjectCard = ({num, title, date, link, url, link2, info, type}) => {
   //       </div>
   //   </div>
   // )
+  if(tags){
+    tags.sort((a, b) => b.length - a.length);
+  }
+  console.log(tags)
   return (
     <div className="project-card">
-      <div className="col-1 col">
-        <div className="title-container">
-          <h1>{title}</h1>
-        </div>
-        <div className="info-container">
-          <p>{info}</p>
-        </div>
+      <div className="title grid-item">
+        <h1>{title}</h1>
+        <h5>{type}</h5>
       </div>
-      <div className="col-2 col">
-        <div className="type-container">
-          <h3>{type}</h3>
-        </div>
-        <div className="image-container">
-          <div className="image" style={{backgroundImage: `url(${url})`}}>
-            {/* <Image src={url} height={1000} width={500} alt="image effect" className='image-effect'></Image> */}
+      <div className="info grid-item">
+        <p>{info}</p>
+      </div>
+      <div className="image-container grid-item">
+        <div className="image" style={{backgroundImage: `url(${url})`}}>
             <div className="filter"></div>
             <div className="image-effect-container">
               <div className="image-effect img-eff-1" style={{backgroundImage: `url(${url})`}}></div>
               <div className="image-effect img-eff-2" style={{backgroundImage: `url(${url})`}}></div>
             </div>
           </div>
-          {/* <Image src={url} width={1000} height={1000} alt='image'></Image> */}
+        </div>
+      <div className="icon-link grid-item">
+        {
+            link == "" && link2 == "" ?
+            <></>
+            :
+            <a href={link != "" ? `https://github.com/EthanTransier/${link}` : link2}>
+              <Image src={link != "" ? '/images/github.svg' : "/images/leave.svg"} width={50} height={50} alt='github'></Image>
+            </a>
+          }
+      </div>
+      <div className="tags grid-item">
+        {
+          tags ? 
+          tags.map((tag, index) => (
+            <div key={index} className="tag">{tag}</div>
+          ))
+          :
+          <></>
+        }
+      </div>
+      <div className="bottom-bar grid-item"> </div>
+      <div className="placeholder grid-item"> </div>
+      <div className={`${num == 0 ? 'disabled' : ''} left-arrow grid-item`} onClick={decreasePosition}>
+        <div className="arrow-container-left">
+          <div className="inner-arrow-container">
+            <Image src={'/images/arrow.svg'} height={50} width={50} alt='arrow'></Image>
+          </div>
         </div>
       </div>
-      <div className="col-3 col">
-        <div className="actions-container">
-          <svg xmlns="http://www.w3.org/2000/svg" width="0.5em" height="1em" viewBox="0 0 12 24"><defs><path id="weuiArrowOutlined0" fill="currentColor" d="m7.588 12.43l-1.061 1.06L.748 7.713a.996.996 0 0 1 0-1.413L6.527.52l1.06 1.06l-5.424 5.425z"/></defs><use fill-rule="evenodd" href="#weuiArrowOutlined0" transform="rotate(-180 5.02 9.505)"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="0.5em" height="1em" viewBox="0 0 12 24"><defs><path id="weuiArrowOutlined0" fill="currentColor" d="m7.588 12.43l-1.061 1.06L.748 7.713a.996.996 0 0 1 0-1.413L6.527.52l1.06 1.06l-5.424 5.425z"/></defs><use fill-rule="evenodd" href="#weuiArrowOutlined0" transform="rotate(-180 5.02 9.505)"/></svg>
-        </div>
-        <div className="github-container">
-          <Image src={'/images/github.svg'} width={50} height={50} alt='github'></Image>
+      <div className={`${num == 1 ? 'disabled' : ''} right-arrow grid-item`} onClick={increasePosition}>
+        <div className="arrow-container-right">
+          <div className="inner-arrow-container">
+            <Image src={'/images/arrow.svg'} height={50} width={50} alt='arrow'></Image>
+          </div>
         </div>
       </div>
     </div>
